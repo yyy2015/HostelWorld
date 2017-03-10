@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - hostel_world@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="hostel_world">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="mysql"/>
+    <schema id="4" name="performance_schema"/>
+    <schema id="5" name="springtest"/>
+    <schema id="6" name="studentgrade"/>
+    <schema id="7" name="sys"/>
+    <table id="8" parent="1" name="user"/>
+    <column id="9" parent="8" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="10" parent="8" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="11" parent="8" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="12" parent="8" name="cardId">
+      <mandatory>1</mandatory>
+      <data-type>varchar(7)|0</data-type>
+    </column>
+    <column id="13" parent="8" name="status">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="14" parent="8" name="balance">
+      <data-type>double|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="15" parent="8" name="level">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+      <default-expression>&apos;normal&apos;</default-expression>
+    </column>
+    <index id="16" parent="8" name="card_id">
+      <columns>cardId</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="17" parent="8" name="user_name">
+      <columns>username</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="18" parent="8" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="19" parent="8" name="user_name">
+      <columns>username</columns>
+      <underlying-index>user_name</underlying-index>
+    </key>
+    <key id="20" parent="8" name="card_id">
+      <columns>cardId</columns>
+      <underlying-index>card_id</underlying-index>
+    </key>
+  </database-model>
+</dataSource>

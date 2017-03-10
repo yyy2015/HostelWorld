@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="HostelWorld" />
+        <module name="StudentGradeSH_h8" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="HostelWorld" target="1.5" />
+      <module name="StudentGradeSH_h8" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

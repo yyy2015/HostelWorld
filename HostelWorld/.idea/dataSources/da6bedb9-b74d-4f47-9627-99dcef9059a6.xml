@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - studentgrade@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="studentgrade">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="abcdef"/>
+    <schema id="3" name="forum"/>
+    <schema id="4" name="information_schema"/>
+    <schema id="5" name="mysql"/>
+    <schema id="6" name="performance_schema"/>
+    <schema id="7" name="springtest"/>
+    <schema id="8" name="sys"/>
+    <table id="9" parent="1" name="course"/>
+    <table id="10" parent="1" name="score"/>
+    <table id="11" parent="1" name="student"/>
+    <column id="12" parent="9" name="courseId">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="13" parent="9" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="14" parent="9" name="courseId">
+      <columns>courseId</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="15" parent="9" name="PRIMARY">
+      <columns>courseId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="16" parent="10" name="studentId">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="17" parent="10" name="courseId">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="18" parent="10" name="score">
+      <data-type>double|0</data-type>
+    </column>
+    <column id="19" parent="10" name="period">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <index id="20" parent="10" name="courseId">
+      <columns>courseId</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="21" parent="10" name="studentId_index">
+      <columns>studentId</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="22" parent="10" name="PRIMARY">
+      <columns>studentId
+courseId
+period</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="23" parent="10" name="studentId">
+      <columns>studentId</columns>
+      <ref-key>~.student.PRIMARY</ref-key>
+      <cascade-update-rule>update</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="24" parent="10" name="courseId">
+      <columns>courseId</columns>
+      <ref-key>~.course.PRIMARY</ref-key>
+      <cascade-update-rule>update</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <column id="25" parent="11" name="studentId">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="26" parent="11" name="name">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="27" parent="11" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="28" parent="11" name="PRIMARY">
+      <columns>studentId</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
