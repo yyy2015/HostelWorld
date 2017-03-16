@@ -11,57 +11,127 @@
     <schema id="6" name="studentgrade"/>
     <schema id="7" name="sys"/>
     <table id="8" parent="1" name="user"/>
-    <column id="9" parent="8" name="id">
+    <table id="9" parent="1" name="hostel"/>
+    <table id="10" parent="1" name="bank_card"/>
+    <column id="11" parent="8" name="id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="10" parent="8" name="username">
+    <column id="12" parent="8" name="username">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="11" parent="8" name="password">
+    <column id="13" parent="8" name="password">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="12" parent="8" name="cardId">
-      <mandatory>1</mandatory>
-      <data-type>varchar(7)|0</data-type>
-    </column>
-    <column id="13" parent="8" name="status">
+    <column id="14" parent="8" name="cardId">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="14" parent="8" name="balance">
+    <column id="15" parent="8" name="status">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="16" parent="8" name="level">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="17" parent="8" name="balance">
+      <mandatory>1</mandatory>
       <data-type>double|0</data-type>
       <default-expression>&apos;0&apos;</default-expression>
     </column>
-    <column id="15" parent="8" name="level">
-      <mandatory>1</mandatory>
+    <column id="18" parent="8" name="last_avail">
       <data-type>varchar(255)|0</data-type>
-      <default-expression>&apos;normal&apos;</default-expression>
     </column>
-    <index id="16" parent="8" name="card_id">
+    <column id="19" parent="8" name="shop_times">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="20" parent="8" name="shop_total">
+      <mandatory>1</mandatory>
+      <data-type>double|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="21" parent="8" name="credit">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <index id="22" parent="8" name="UK6i0fyus8xdd4vbpdl2hu8mikq">
       <columns>cardId</columns>
       <desc-columns></desc-columns>
       <unique>1</unique>
     </index>
-    <index id="17" parent="8" name="user_name">
+    <index id="23" parent="8" name="UKjreodf78a7pl5qidfh43axdfb">
       <columns>username</columns>
       <desc-columns></desc-columns>
       <unique>1</unique>
     </index>
-    <key id="18" parent="8" name="PRIMARY">
+    <key id="24" parent="8" name="PRIMARY">
       <columns>id</columns>
       <primary>1</primary>
     </key>
-    <key id="19" parent="8" name="user_name">
+    <key id="25" parent="8" name="UKjreodf78a7pl5qidfh43axdfb">
       <columns>username</columns>
-      <underlying-index>user_name</underlying-index>
+      <underlying-index>UKjreodf78a7pl5qidfh43axdfb</underlying-index>
     </key>
-    <key id="20" parent="8" name="card_id">
+    <key id="26" parent="8" name="UK6i0fyus8xdd4vbpdl2hu8mikq">
       <columns>cardId</columns>
-      <underlying-index>card_id</underlying-index>
+      <underlying-index>UK6i0fyus8xdd4vbpdl2hu8mikq</underlying-index>
     </key>
+    <column id="27" parent="9" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="28" parent="9" name="hostelName">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="29" parent="9" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="30" parent="9" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="31" parent="10" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="32" parent="10" name="bankCardId">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="33" parent="10" name="owner">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="34" parent="10" name="balance">
+      <data-type>double|0</data-type>
+      <default-expression>&apos;99999999&apos;</default-expression>
+    </column>
+    <index id="35" parent="10" name="card_owner">
+      <columns>owner</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="36" parent="10" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="37" parent="10" name="card_owner">
+      <columns>owner</columns>
+      <ref-key>~.user.UKjreodf78a7pl5qidfh43axdfb</ref-key>
+      <cascade-update-rule>update</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
   </database-model>
 </dataSource>

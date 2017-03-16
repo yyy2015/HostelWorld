@@ -1,0 +1,71 @@
+html,body{
+    height:100%;
+}
+
+.box{
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6699FF', endColorstr='#6699FF'); /*  IE */
+    background-image:linear-gradient(bottom, #6699FF 0%, #6699FF 100%);
+    background-image:-o-linear-gradient(bottom, #6699FF 0%, #6699FF 100%);
+    background-image:-moz-linear-gradient(bottom, #6699FF 0%, #6699FF 100%);
+    background-image:-webkit-linear-gradient(bottom, #6699FF 0%, #6699FF 100%);
+    background-image:-ms-linear-gradient(bottom, #6699FF 0%, #6699FF 100%);
+
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+
+.login-box{
+    width:500px;
+    height:400px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.logo-part{
+    background: rgba(0,0,0,.6);
+    height:30%;
+}
+
+.login-content{
+    width:100%;
+    height:70%;
+    position:absolute;
+    bottom:0px;
+    background-color: rgba(255,255,255,.6);
+}
+
+.form{
+    position: absolute;
+    width:80%;
+    height:70%;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.btn-common{
+    width:100px;
+    height:40px;
+    font-size:16px;
+    margin-top:8px;
+}
+
+.reg{
+    margin-top:8px;
+}
+
+.reg a{
+    text-decoration: none;
+}
+
+.hint{
+    color: darkred;
+}
+

@@ -3,20 +3,36 @@ package edu.nju.hostelworld.model;
 import javax.persistence.*;
 
 /**
- * Created by yyy on 2017/3/10.
+ * Created by yyy on 2017/3/13.
  */
 @Entity
-@Table(name = "user", schema = "hostel_world", catalog = "")
+@Table(uniqueConstraints =
+        {@UniqueConstraint(columnNames = "username"),
+            @UniqueConstraint(columnNames = "cardId")
+        })
 public class User {
     private int id;
     private String username;
     private String password;
     private String cardId;
-    private String status;
-    private Double balance;
-    private String level;
+    private int status;
+    private int level;
+    private double balance;
+    private String lastAvail;
+    private int shopTimes;
+    private double shopTotal;
+    private int credit;
+
+    public User(){}
+
+    public User(String username,String password,String cardId){
+        this.username = username;
+        this.password = password;
+        this.cardId = cardId;
+    }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     public int getId() {
         return id;
@@ -57,33 +73,73 @@ public class User {
     }
 
     @Basic
-    @Column(name = "status" )
-    public String getStatus() {
+    @Column(name = "status")
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
     @Basic
+    @Column(name = "level")
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    @Basic
     @Column(name = "balance")
-    public Double getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(Double balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 
     @Basic
-    @Column(name = "level")
-    public String getLevel() {
-        return level;
+    @Column(name = "last_avail")
+    public String getLastAvail() {
+        return lastAvail;
     }
 
-    public void setLevel(String level) {
-        this.level = level;
+    public void setLastAvail(String lastAvail) {
+        this.lastAvail = lastAvail;
+    }
+
+    @Basic
+    @Column(name = "shop_times")
+    public int getShopTimes() {
+        return shopTimes;
+    }
+
+    public void setShopTimes(int shopTimes) {
+        this.shopTimes = shopTimes;
+    }
+
+    @Basic
+    @Column(name = "shop_total")
+    public double getShopTotal() {
+        return shopTotal;
+    }
+
+    public void setShopTotal(double shopTotal) {
+        this.shopTotal = shopTotal;
+    }
+
+    @Basic
+    @Column(name = "credit")
+    public int getCredit(){
+        return credit;
+    }
+
+    public void setCredit(int credit){
+        this.credit = credit;
     }
 
     @Override
@@ -91,28 +147,38 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        User that = (User) o;
+        User user = (User) o;
 
-        if (id != that.id) return false;
-        if (username != null ? !username.equals(that.username) : that.username != null) return false;
-        if (password != null ? !password.equals(that.password) : that.password != null) return false;
-        if (cardId != null ? !cardId.equals(that.cardId) : that.cardId != null) return false;
-        if (status != null ? !status.equals(that.status) : that.status != null) return false;
-        if (balance != null ? !balance.equals(that.balance) : that.balance != null) return false;
-        if (level != null ? !level.equals(that.level) : that.level != null) return false;
+        if (id != user.id) return false;
+        if (status != user.status) return false;
+        if (level != user.level) return false;
+        if (Double.compare(user.balance, balance) != 0) return false;
+        if (shopTimes != user.shopTimes) return false;
+        if (Double.compare(user.shopTotal, shopTotal) != 0) return false;
+        if (username != null ? !username.equals(user.username) : user.username != null) return false;
+        if (password != null ? !password.equals(user.password) : user.password != null) return false;
+        if (cardId != null ? !cardId.equals(user.cardId) : user.cardId != null) return false;
+        if (lastAvail != null ? !lastAvail.equals(user.lastAvail) : user.lastAvail != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = id;
+        int result;
+        long temp;
+        result = id;
         result = 31 * result + (username != null ? username.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + (cardId != null ? cardId.hashCode() : 0);
-        result = 31 * result + (status != null ? status.hashCode() : 0);
-        result = 31 * result + (balance != null ? balance.hashCode() : 0);
-        result = 31 * result + (level != null ? level.hashCode() : 0);
+        result = 31 * result + status;
+        result = 31 * result + level;
+        temp = Double.doubleToLongBits(balance);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (lastAvail != null ? lastAvail.hashCode() : 0);
+        result = 31 * result + shopTimes;
+        temp = Double.doubleToLongBits(shopTotal);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
 }

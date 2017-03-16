@@ -15,6 +15,10 @@ public interface UserService {
 
     User findUser(String username, String password);
 
+    User findUser(String username);
+
+    boolean isCardExist(String cardId);
+
     List<User> findAllUser();
 
 }

@@ -1,0 +1,60 @@
+.my-nav{
+    background: rgb(41,61,102);
+}
+
+.my-logo{
+    width:180px;
+    height:50px;
+    margin-right:20px;
+}
+
+.float-left{
+    float:left;
+}
+
+.float-right{
+    float:right;
+}
+
+.main-part{
+    margin-top:80px;
+
+}
+
+.my-sidebar{
+    box-shadow: 5px 5px 5px #888888;
+}
+
+.side-active{
+    background-color: rgb(194,214,255);
+}
+
+.hint{
+    color: darkred;
+}
+
+.my-btn,.my-btn:focus{
+    margin-left:15px;
+    width:60px;
+    height:25px;
+    background-color: #5299C0;
+    color:#fff;
+    font-size:12px;
+    border: none;
+    outline:none;
+}
+
+.my-btn:hover{
+    border:none;
+    background-color: rgba(75,122,147,.95);
+    color:#fff;
+}
+
+.my-btn-large,.my-btn-large:focus,.my-btn-large:hover{
+    width:80px;
+    height:30px;
+}
+
+.display-block{
+    display:block;
+}
