@@ -33,8 +33,8 @@
                 <li><a href="home.jsp">首页</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="float-right"><a href="userInfo.jsp">${username}</a></li>
-                <li class="float-right"><a href="#">退出登录</a></li>
+                <li class="float-right"><a href="/user/userInfo">${sessionScope.username}</a></li>
+                <li class="float-right"><a href="/user/logout">退出登录</a></li>
             </ul>
         </div>
     </div>

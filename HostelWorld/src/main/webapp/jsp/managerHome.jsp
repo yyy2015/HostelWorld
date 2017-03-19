@@ -17,7 +17,7 @@
 </head>
 <body>
 <!--导航栏-->
-    <nav class="navbar navbar-inverse navbar-fixed-top my-nav">
+<nav class="navbar navbar-inverse navbar-fixed-top my-nav">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -33,7 +33,7 @@
                 <li><a href="home.jsp">首页</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="float-right"><a href="/user/userInfo">${sessionScope.username}</a></li>
+                <li class="float-right"><a href="#">${sessionScope.username}</a></li>
                 <li class="float-right"><a href="/user/logout">退出登录</a></li>
             </ul>
         </div>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>login</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/login.css">
 </head>
 <body>
@@ -27,10 +28,32 @@
                             <input type="password" name="password" class="form-control" placeholder="密码">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                            <input type="password" id="passwordConfirm" name="passwordConfirm" class="form-control" placeholder="确认密码">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-book"></span></span>
+                            <input type="text" id="bankAccount" name="bankAccount" class="form-control" placeholder="银行账户">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                            <select class="form-control" name="identify">
+                                <option>会员</option>
+                                <option>客栈</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="form-group text-center">
                         <button type="submit" class="btn btn-common btn-info">注册</button>
-                        <div class="reg">已有账号？<a href="login.html">去登录!</a></div>
+                        <span class="reg">已有账号？<a href="login.html">去登录!</a></span>
                     </div>
+
                 </form>
             </div>
 

@@ -64,3 +64,23 @@ li .value{
     width:100%;
     height:70px;
 }
+
+.tag-times{
+    position:relative;
+    font-size:18px;
+    font-weight:600;
+    left:50px;
+}
+
+.total-value{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.tag-money{
+    position:relative;
+    font-size:18px;
+    font-weight:600;
+    left:100px;
+}
+

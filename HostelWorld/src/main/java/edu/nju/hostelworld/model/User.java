@@ -22,13 +22,15 @@ public class User {
     private int shopTimes;
     private double shopTotal;
     private int credit;
+    private String bankAccount;
 
     public User(){}
 
-    public User(String username,String password,String cardId){
+    public User(String username,String password,String cardId,String bankAccount){
         this.username = username;
         this.password = password;
         this.cardId = cardId;
+        this.bankAccount = bankAccount;
     }
 
     @Id
@@ -140,6 +142,16 @@ public class User {
 
     public void setCredit(int credit){
         this.credit = credit;
+    }
+
+    @Basic
+    @Column(name = "bankAccount")
+    public String getBankAccount(){
+        return bankAccount;
+    }
+
+    public void setBankAccount(String bankAccount){
+        this.bankAccount = bankAccount;
     }
 
     @Override

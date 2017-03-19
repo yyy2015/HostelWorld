@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18157917-c1fb-4b35-be68-993abd9d1028" name="Default" comment="" />
+    <list default="true" id="18157917-c1fb-4b35-be68-993abd9d1028" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/classes/edu/nju/hostelworld/controller/UserController.class" afterPath="$PROJECT_DIR$/../../HostelWorld/target/classes/edu/nju/hostelworld/controller/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/classes/edu/nju/hostelworld/model/User.class" afterPath="$PROJECT_DIR$/../../HostelWorld/target/classes/edu/nju/hostelworld/model/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/WEB-INF/classes/edu/nju/hostelworld/controller/UserController.class" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/WEB-INF/classes/edu/nju/hostelworld/controller/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/WEB-INF/classes/edu/nju/hostelworld/model/User.class" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/WEB-INF/classes/edu/nju/hostelworld/model/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../doc/~$stel World功能需求文档.docx" afterPath="$PROJECT_DIR$/../../doc/~$stel World功能需求文档.docx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/.idea/dataSources/858a30aa-ee5d-48e8-803b-61cdeb498ed5.xml" afterPath="$PROJECT_DIR$/../../HostelWorld/.idea/dataSources/858a30aa-ee5d-48e8-803b-61cdeb498ed5.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../HostelWorld/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/java/edu/nju/hostelworld/controller/UserController.java" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/java/edu/nju/hostelworld/controller/UserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/java/edu/nju/hostelworld/model/User.java" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/java/edu/nju/hostelworld/model/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/css/login.css" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/css/login.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/css/main.css" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/css/userInfo.css" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/css/userInfo.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/html/register.html" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/html/register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/html/userInfo.html" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/html/userInfo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/jsp/home.jsp" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/jsp/home.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/jsp/register.jsp" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/jsp/register.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/jsp/userInfo.jsp" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/jsp/userInfo.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/css/login.css" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/css/login.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/css/main.css" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/css/userInfo.css" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/css/userInfo.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/html/register.html" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/html/register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/html/userInfo.html" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/html/userInfo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/jsp/home.jsp" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/jsp/home.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/jsp/register.jsp" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/jsp/register.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/jsp/userInfo.jsp" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/jsp/userInfo.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../demo/Spring-SpringMVC-Hibernate-master/SpringMVC/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../demo/Spring-SpringMVC-Hibernate-master/SpringMVC/.idea/workspace.xml" />
+    </list>
     <ignored path="HostelWorld.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,11 +51,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
+            <state relative-caret-position="1020">
               <caret line="60" column="38" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mark/java/controller/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="344">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -36,7 +74,7 @@
       <file leaf-file-name="infrastructure.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/infrastructure.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="408">
               <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
               <folding />
             </state>
@@ -117,10 +155,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-7" />
+    <option name="y" value="2" />
     <option name="width" value="1378" />
-    <option name="height" value="744" />
+    <option name="height" value="733" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -366,8 +404,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -376,7 +414,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.29310346" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../demo/Spring-SpringMVC-Hibernate-master/SpringMVC" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../HostelWorld" />
   </component>
   <component name="RunManager" selected="Tomcat Server.spring">
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
@@ -895,14 +933,16 @@
       <workItem from="1487319504917" duration="11069000" />
       <workItem from="1489064594022" duration="891000" />
       <workItem from="1489074091821" duration="810000" />
+      <workItem from="1489502200586" duration="16000" />
+      <workItem from="1489839742271" duration="19000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18900000" />
+    <option name="totallyTimeSpent" value="18935000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
+    <frame x="-7" y="2" width="1378" height="733" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -919,7 +959,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2336874" sideWeight="0.7820299" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23292868" sideWeight="0.7820299" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34065935" sideWeight="0.21797004" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -958,6 +998,62 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="60" column="38" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mark/java/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/infrastructure.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/infrastructure.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
@@ -1052,7 +1148,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1076,10 +1171,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#646#652#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1110,7 +1202,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1129,17 +1220,6 @@
             <element signature="imports" expanded="false" />
             <element signature="e#494#495#0" expanded="false" />
             <element signature="e#525#526#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mark/java/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#646#652#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1195,7 +1275,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/infrastructure.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="408">
           <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
           <folding />
         </state>
@@ -1203,8 +1283,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
+        <state relative-caret-position="1020">
           <caret line="60" column="38" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mark/java/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>

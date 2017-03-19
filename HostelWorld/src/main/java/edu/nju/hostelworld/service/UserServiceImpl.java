@@ -23,6 +23,10 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
+    public User updateUser(User user) {
+        return userDao.save(user);
+    }
+
 
     public void deleteUser(String username) {
         User user = userDao.findByUsername(username);

@@ -11,6 +11,8 @@ public interface UserService {
 
     User saveUser(User user);
 
+    User updateUser(User user);
+
     void deleteUser(String username);
 
     User findUser(String username, String password);

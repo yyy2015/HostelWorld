@@ -13,18 +13,28 @@
         </div>
         <div class="login-content">
             <div class="form">
-                <div class="hint"><% if(request.getAttribute("nameOrpwd_wrong")!=null) out.print("用户名或密码错误"); %></div>
-                <form action="/login" method="post">
+                <div class="hint"><% if(session.getAttribute("nameOrpwd_wrong")!=null) out.print("用户名或密码错误"); %></div>
+                <form action="/user/login" method="post">
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                            <input type="text" name="username" class="form-control" placeholder="用户名">
+                            <input type="text" name="username" class="form-control" placeholder="用户名或客栈序列号">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
                             <input type="password"  name="password" class="form-control" placeholder="密码">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                            <select class="form-control" name="identity">
+                                <option>member</option>
+                                <option>hostel</option>
+                                <option>manager</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group text-center">

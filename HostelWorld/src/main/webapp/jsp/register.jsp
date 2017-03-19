@@ -14,8 +14,8 @@
         </div>
         <div class="login-content">
             <div class="form">
-                <div class="hint"><% if(request.getAttribute("name_repeat") != null) out.write("用户名已存在"); %></div>
-                <form id="reg-form" action="/register" method="post">
+                <div class="hint"><% if(session.getAttribute("name_repeat") != null) out.write("用户名已存在"); %></div>
+                <form id="reg-form" action="/user/register" method="post">
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
@@ -34,9 +34,24 @@
                             <input type="password" id="passwordConfirm" name="passwordConfirm" class="form-control" placeholder="确认密码">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-book"></span></span>
+                            <input type="text" id="bankAccount" name="bankAccount" class="form-control" placeholder="银行账户">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                            <select class="form-control" name="identity">
+                                <option>member</option>
+                                <option>hostel</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="form-group text-center">
                         <button type="button" id="sub" class="btn btn-common btn-info" onclick="confirmPwd()">注册</button>
-                        <div class="reg">已有账号？<a href="/jsp/login.jsp">去登录!</a></div>
+                        <span class="reg">已有账号？<a href="/jsp/login.jsp">去登录!</a></span>
                     </div>
                 </form>
             </div>
