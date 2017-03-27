@@ -1,5 +1,6 @@
 package edu.nju.hostelworld.service;
 
+import edu.nju.hostelworld.model.Record;
 import edu.nju.hostelworld.model.User;
 
 import java.util.List;
@@ -22,5 +23,16 @@ public interface UserService {
     boolean isCardExist(String cardId);
 
     List<User> findAllUser();
+
+    Record saveRecord(String message,double money,User user);
+
+    List<Record> getRecordList(int userId);
+
+    User pay(User user,double money);
+
+    User addBalance(User user,double money);
+
+
+
 
 }

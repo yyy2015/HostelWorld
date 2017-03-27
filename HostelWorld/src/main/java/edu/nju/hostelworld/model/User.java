@@ -1,6 +1,8 @@
 package edu.nju.hostelworld.model;
 
 import javax.persistence.*;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by yyy on 2017/3/13.
@@ -23,6 +25,8 @@ public class User {
     private double shopTotal;
     private int credit;
     private String bankAccount;
+    private List<Reserve> reserves;
+    private List<Record> records;
 
     public User(){}
 
@@ -192,5 +196,23 @@ public class User {
         temp = Double.doubleToLongBits(shopTotal);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
+    }
+
+    @OneToMany(mappedBy = "user")
+    public List<Reserve> getReserves() {
+        return reserves;
+    }
+
+    public void setReserves(List<Reserve> reservesById) {
+        this.reserves = reservesById;
+    }
+
+    @OneToMany(mappedBy = "user")
+    public List<Record> getRecords() {
+        return records;
+    }
+
+    public void setRecords(List<Record> recordsById) {
+        this.records = recordsById;
     }
 }

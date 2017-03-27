@@ -31,7 +31,8 @@ public class UserController {
     @RequestMapping("/login")
     public String login(@RequestParam("username")String username,
                         @RequestParam("password")String password,
-                        @RequestParam("identity")String identity, HttpSession session){
+                        @RequestParam("identity")String identity,
+                        HttpSession session,Model model){
         //会员登录
         if(identity.equals("member")){
             User user = userService.findUser(username,password);
@@ -52,6 +53,7 @@ public class UserController {
                 session.setAttribute("hostelSeq",username);
                 session.setAttribute("password",password);
                 session.removeAttribute("nameOrpwd_wrong");
+                model.addAttribute("hostel",hostel);
                 return "hostelHome";
             }else{
                 session.setAttribute("nameOrpwd_wrong",true);
@@ -81,7 +83,7 @@ public class UserController {
                            @RequestParam("password")String password,
                            @RequestParam("bankAccount")String bankAccount,
                            @RequestParam("identity")String identity,
-                           HttpSession session){
+                           HttpSession session,Model model){
 
         if(identity.equals("member")){
             //用户名重复
@@ -117,6 +119,10 @@ public class UserController {
 
             session.setAttribute("hostelSeq",hostelSeq);
             session.setAttribute("password",password);
+
+            Hostel now_hostel = hostelService.findHostel(hostelSeq);
+            model.addAttribute("hostel",now_hostel);
+
             return "hostelHome";
         }
 
@@ -166,10 +172,11 @@ public class UserController {
 
         //会员激活状态和等级
         user.setStatus(getStatus(user));
-
         user.setLevel(getLevel(user));
+        user = userService.updateUser(user);
 
-        userService.updateUser(user);
+        //新增账单记录
+        userService.saveRecord("账户充值",num,user);
 
         return "redirect:/user/userInfo";
     }
@@ -193,7 +200,10 @@ public class UserController {
             user.setLevel(getLevel(user));
 
         }
-        userService.updateUser(user);
+        user = userService.updateUser(user);
+
+        //新增账单记录
+        userService.saveRecord("积分兑换",num/10,user);
 
         return "redirect:/user/userInfo";
 
@@ -222,6 +232,11 @@ public class UserController {
         return "login";
     }
 
+
+
+
+
+
     /**
      * 计算会员等级
      * @param user
@@ -249,17 +264,6 @@ public class UserController {
     @RequestMapping("/test")
     @ResponseBody
     public List<User> test(){
-
-        User u1 = new User();
-        u1.setUsername("qwe");
-        u1.setPassword("aaa");
-        u1.setCardId("0099887");
-        User r1 = userService.saveUser(u1);
-
-        if(r1 == null){
-            System.out.println("r1 is null because the repeated column value");
-        }
-
 
         List<User> list = userService.findAllUser();
 

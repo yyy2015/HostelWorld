@@ -2,32 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18157917-c1fb-4b35-be68-993abd9d1028" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/css/manager.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/html/managerHome.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/classes/edu/nju/hostelworld/controller/HostelController.class" afterPath="$PROJECT_DIR$/../../HostelWorld/target/classes/edu/nju/hostelworld/controller/HostelController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/classes/edu/nju/hostelworld/controller/UserController.class" afterPath="$PROJECT_DIR$/../../HostelWorld/target/classes/edu/nju/hostelworld/controller/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/classes/edu/nju/hostelworld/model/User.class" afterPath="$PROJECT_DIR$/../../HostelWorld/target/classes/edu/nju/hostelworld/model/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/classes/edu/nju/hostelworld/model/Hostel.class" afterPath="$PROJECT_DIR$/../../HostelWorld/target/classes/edu/nju/hostelworld/model/Hostel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/WEB-INF/classes/edu/nju/hostelworld/controller/HostelController.class" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/WEB-INF/classes/edu/nju/hostelworld/controller/HostelController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/WEB-INF/classes/edu/nju/hostelworld/controller/UserController.class" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/WEB-INF/classes/edu/nju/hostelworld/controller/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/WEB-INF/classes/edu/nju/hostelworld/model/User.class" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/WEB-INF/classes/edu/nju/hostelworld/model/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../doc/~$stel World功能需求文档.docx" afterPath="$PROJECT_DIR$/../../doc/~$stel World功能需求文档.docx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/WEB-INF/classes/edu/nju/hostelworld/model/Hostel.class" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/WEB-INF/classes/edu/nju/hostelworld/model/Hostel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/.idea/dataSources/858a30aa-ee5d-48e8-803b-61cdeb498ed5.xml" afterPath="$PROJECT_DIR$/../../HostelWorld/.idea/dataSources/858a30aa-ee5d-48e8-803b-61cdeb498ed5.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../HostelWorld/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/java/edu/nju/hostelworld/controller/HostelController.java" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/java/edu/nju/hostelworld/controller/HostelController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/java/edu/nju/hostelworld/controller/UserController.java" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/java/edu/nju/hostelworld/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/java/edu/nju/hostelworld/model/User.java" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/java/edu/nju/hostelworld/model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/css/login.css" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/css/login.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/java/edu/nju/hostelworld/model/Hostel.java" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/java/edu/nju/hostelworld/model/Hostel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/css/main.css" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/css/userInfo.css" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/css/userInfo.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/html/register.html" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/html/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/html/userInfo.html" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/html/userInfo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/jsp/home.jsp" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/jsp/home.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/jsp/register.jsp" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/jsp/register.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/jsp/userInfo.jsp" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/jsp/userInfo.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/css/login.css" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/css/login.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/jsp/hostelHome.jsp" afterPath="$PROJECT_DIR$/../../HostelWorld/src/main/webapp/jsp/hostelHome.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/css/main.css" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/css/userInfo.css" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/css/userInfo.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/html/register.html" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/html/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/html/userInfo.html" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/html/userInfo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/jsp/home.jsp" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/jsp/home.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/jsp/register.jsp" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/jsp/register.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/jsp/userInfo.jsp" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/jsp/userInfo.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../HostelWorld/target/grade/jsp/hostelHome.jsp" afterPath="$PROJECT_DIR$/../../HostelWorld/target/grade/jsp/hostelHome.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../demo/Spring-SpringMVC-Hibernate-master/SpringMVC/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../demo/Spring-SpringMVC-Hibernate-master/SpringMVC/.idea/workspace.xml" />
     </list>
     <ignored path="HostelWorld.iws" />
@@ -404,8 +397,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -935,11 +928,12 @@
       <workItem from="1489074091821" duration="810000" />
       <workItem from="1489502200586" duration="16000" />
       <workItem from="1489839742271" duration="19000" />
+      <workItem from="1490240661673" duration="54000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18935000" />
+    <option name="totallyTimeSpent" value="18989000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="2" width="1378" height="733" extended-state="0" />
@@ -966,8 +960,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960753" sideWeight="0.49417636" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -998,6 +992,38 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="60" column="38" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mark/java/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/infrastructure.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">

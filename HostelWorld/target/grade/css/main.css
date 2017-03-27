@@ -62,3 +62,15 @@
 .display-inline{
     display: inline;
 }
+
+.my-red{
+    color:rgb(222,108,108);
+}
+
+.my-yellow{
+    color:rgb(237,185,103);
+}
+
+.my-green{
+    color:#5299C0;
+}

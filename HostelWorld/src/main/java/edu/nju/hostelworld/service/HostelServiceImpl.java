@@ -1,9 +1,12 @@
 package edu.nju.hostelworld.service;
 
 import edu.nju.hostelworld.dao.HostelDao;
+import edu.nju.hostelworld.dao.RoomDao;
 import edu.nju.hostelworld.model.Hostel;
+import edu.nju.hostelworld.model.Room;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -11,10 +14,14 @@ import java.util.List;
  * Created by yyy on 2017/3/19.
  */
 @Service
+@Transactional
 public class HostelServiceImpl implements HostelService {
 
     @Autowired
     private HostelDao hostelDao;
+
+    @Autowired
+    private RoomDao roomDao;
 
 
     public Hostel saveHostel(Hostel hostel) {
@@ -56,4 +63,5 @@ public class HostelServiceImpl implements HostelService {
         }
         return true;
     }
+
 }

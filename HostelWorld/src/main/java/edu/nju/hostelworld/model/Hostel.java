@@ -1,6 +1,8 @@
 package edu.nju.hostelworld.model;
 
 import javax.persistence.*;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by yyy on 2017/3/13.
@@ -15,7 +17,10 @@ public class Hostel {
     private int status;
     private String bankAccount;
     private double balance;
-    private String descrition;
+    private String description;
+    private String host;
+//    private List<Bill> bills;
+    private List<Room> rooms;
 
     public Hostel(){}
 
@@ -88,13 +93,23 @@ public class Hostel {
     }
 
     @Basic
-    @Column(name="description")
-    public String getDescrition() {
-        return descrition;
+    @Column(name= "description")
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescrition(String descrition) {
-        this.descrition = descrition;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Basic
+    @Column(name = "host")
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
     }
 
     @Override
@@ -127,5 +142,24 @@ public class Hostel {
 
     public void setHostelSeq(String hostelSeq) {
         this.hostelSeq = hostelSeq;
+    }
+
+//    @OneToMany(mappedBy = "hostel")
+//    public List<Bill> getBills() {
+//        return bills;
+//    }
+//
+//    public void setBills(List<Bill> billsById) {
+//        this.bills = billsById;
+//    }
+
+    @OneToMany
+    @JoinColumn(name = "hostelId", referencedColumnName = "id")
+    public List<Room> getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(List<Room> roomsById) {
+        this.rooms = roomsById;
     }
 }

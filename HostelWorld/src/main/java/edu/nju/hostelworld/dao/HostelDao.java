@@ -11,6 +11,8 @@ import java.util.List;
  */
 public interface HostelDao extends JpaRepository<Hostel,Serializable> {
 
+    Hostel findById(int id);
+
     Hostel findByHostelSeq(String hostelSeq);
 
     Hostel findByHostelSeqAndPassword(String hostelSeq,String password);

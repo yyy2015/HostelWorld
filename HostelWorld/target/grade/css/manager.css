@@ -1,0 +1,34 @@
+.application-list-item{
+    height:160px;
+    box-shadow:5px 5px 5px #888888 ;
+    margin-bottom:10px;
+}
+
+.operation-part{
+    position:relative;
+    top:50px;
+}
+
+.my-btn{
+    margin-bottom:10px;
+    display:block;
+}
+
+.hostelName{
+    color:#5299C0
+}
+
+.tag{
+    display:block;
+    font-size: 14px;
+    font-weight:bolder;
+    color:rgb(100,100,100)
+}
+
+.value{
+    font-weight:normal;
+}
+
+.description{
+    color:rgb(50,50,50);
+}
