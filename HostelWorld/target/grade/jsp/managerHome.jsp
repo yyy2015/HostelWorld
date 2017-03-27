@@ -32,7 +32,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="float-right"><a href="#">${sessionScope.username}</a></li>
-                <li class="float-right"><a href="#">退出登录</a></li>
+                <li class="float-right"><a href="/user/logout">退出登录</a></li>
             </ul>
         </div>
     </div>
@@ -60,6 +60,7 @@
                         <h4 class="hostelName">客栈名称</h4>
                         <span class="tag">序列号：<span class="value seq">1234567</span></span>
                         <span class="tag">银行账户：<span class="value bankAccount">1234567</span></span>
+                        <span class="tag">客栈地址：<span class="value address">南京大学鼓楼校区</span></span>
                         <p class="description">&nbsp&nbsp&nbsp&nbsp这是一段客栈描述这是一段客栈描述这是一段客栈描述这是一段客栈描述这是一段客栈描述这是一段客栈描述
                             这是一段客栈描述这是一段客栈描述这是一段客栈描述</p>
                         <span class="tag">申请人：<span class="value host">yyy</span></span>
@@ -83,6 +84,7 @@
 
 <script src="../plugin/jquery/jquery-3.1.1.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script src="../js/manageApplication.js"></script>
 
 
 </body>

@@ -4,10 +4,12 @@ import edu.nju.hostelworld.dao.HostelDao;
 import edu.nju.hostelworld.dao.RoomDao;
 import edu.nju.hostelworld.model.Hostel;
 import edu.nju.hostelworld.model.Room;
+import edu.nju.hostelworld.vo.HostelVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,8 +33,24 @@ public class HostelServiceImpl implements HostelService {
         return hostelDao.save(hostel) ;
     }
 
+    public HostelVo saveHostel(String hostelName, String password, String hostelSeq, String bankAccount) {
+        return null;
+    }
+
     public Hostel updateHostel(Hostel hostel) {
         return hostelDao.save(hostel);
+    }
+
+    public HostelVo updateHostel(int hostelId, String hostelName,String bankAccount,String description,
+                                 String host,String address) {
+        Hostel hostel = hostelDao.findById(hostelId);
+        hostel.setHostelName(hostelName);
+        hostel.setBankAccount(bankAccount);
+        hostel.setDescription(description);
+        hostel.setHost(host);
+        hostel.setAddress(address);
+        hostel.setStatus(0);
+        return new HostelVo(hostelDao.save(hostel));
     }
 
     public Hostel findHostel(String hostelSeq) {
@@ -43,8 +61,12 @@ public class HostelServiceImpl implements HostelService {
         return hostelDao.findByHostelSeqAndPassword(hostelSeq, password);
     }
 
-    public List<Hostel> findHostel(int status) {
-        return hostelDao.findByStatus(status);
+    public List<HostelVo> findHostel(int status) {
+        List<HostelVo> list = new ArrayList<HostelVo>();
+        for(Hostel hostel:hostelDao.findByStatus(status)){
+            list.add(new HostelVo(hostel));
+        }
+        return list;
     }
 
     /**
@@ -62,6 +84,10 @@ public class HostelServiceImpl implements HostelService {
             return false;
         }
         return true;
+    }
+
+    public HostelVo findHostelDetail(int hostelId) {
+        return new HostelVo(hostelDao.findById(hostelId));
     }
 
 }

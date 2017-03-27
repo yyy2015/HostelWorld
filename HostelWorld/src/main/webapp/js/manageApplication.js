@@ -17,22 +17,57 @@ var ApplicationList={
             hostelName.text(application.hostelName);
             var bankAccount = tempGride.find(".bankAccount").eq(0);
             bankAccount.text(application.bankAccount);
+            var address = tempGride.find(".address").eq(0);
+            address.text(application.address);
             var description = tempGride.find(".description").eq(0);
             description.text(application.description);
             var host = tempGride.find(".host").eq(0);
             host.text(application.host);
 
             var approve = tempGride.find(".approve").eq(0);
-            approve.addEventListener("click",function(){
-                //todo
+            approve.click(function(){
+                $.get({
+                    url:"/hostelManage/approve/"+application.id,
+                    success:function(newList){
+                        ApplicationList.updateData(newList);
+                    },
+                    error:function(){
+                        console.log("approve wrong!");
+                    }
+                })
             })
 
             var refuse = tempGride.find(".refuse").eq(0);
-            refuse.addEventListener("click",function(){
-                // todo
+            refuse.click(function(){
+                $.get({
+                    url:"/hostelManage/refuse/"+application.id,
+                    success:function(newList){
+                        ApplicationList.updateData(newList);
+                    },
+                    error:function(){
+                        console.log("refuse wrong!");
+                    }
+                })
             })
+
             _this.gridsFather.append(tempGride);
 
         })
     }
 }
+
+$(document).ready(
+    function(){
+        ApplicationList.init();
+        $.get({
+            url:"/hostelManage/applicationList",
+            success:function(newList){
+                ApplicationList.updateData(newList);
+            },
+            error:function(){
+                console.log("get hostel application list wrong!");
+            }
+
+        })
+    }
+)

@@ -29,7 +29,6 @@ public class ManagerController {
     @ResponseBody
     public List<HostelVo> getApplicationList(){
         List<HostelVo> voList = managerService.getApplicationList();
-        System.out.println(voList.get(0).getRooms());
         return voList;
     }
 
@@ -41,6 +40,7 @@ public class ManagerController {
     }
 
     @RequestMapping("/refuse/{hostelId}")
+    @ResponseBody
     public List<HostelVo> refuse(@PathVariable int hostelId){
         managerService.examine(hostelId,-1);
         return getApplicationList();

@@ -21,6 +21,7 @@ public class Hostel {
     private String host;
 //    private List<Bill> bills;
     private List<Room> rooms;
+    private String address;
 
     public Hostel(){}
 
@@ -110,6 +111,16 @@ public class Hostel {
 
     public void setHost(String host) {
         this.host = host;
+    }
+
+    @Basic
+    @Column(name = "address")
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Override

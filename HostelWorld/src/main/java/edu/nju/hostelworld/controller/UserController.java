@@ -4,6 +4,7 @@ import edu.nju.hostelworld.model.Hostel;
 import edu.nju.hostelworld.model.User;
 import edu.nju.hostelworld.service.HostelService;
 import edu.nju.hostelworld.service.UserService;
+import edu.nju.hostelworld.vo.HostelVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -49,6 +50,7 @@ public class UserController {
         //客栈登录
         if(identity.equals("hostel") ){
             Hostel hostel = hostelService.findHostel(username,password);//username其实为序列号
+//            HostelVo vo = new HostelVo(hostel);
             if(hostel != null){
                 session.setAttribute("hostelSeq",username);
                 session.setAttribute("password",password);
@@ -107,6 +109,7 @@ public class UserController {
             session.removeAttribute("name_repeat");
             return "home";
         }
+
         if(identity.equals("hostel")){
             int seq;
             do{
@@ -121,6 +124,7 @@ public class UserController {
             session.setAttribute("password",password);
 
             Hostel now_hostel = hostelService.findHostel(hostelSeq);
+//            HostelVo vo = new HostelVo(now_hostel);
             model.addAttribute("hostel",now_hostel);
 
             return "hostelHome";
@@ -260,14 +264,5 @@ public class UserController {
         }
         return user.getStatus();
     }
-    //test
-    @RequestMapping("/test")
-    @ResponseBody
-    public List<User> test(){
 
-        List<User> list = userService.findAllUser();
-
-        return list;
-
-    }
 }

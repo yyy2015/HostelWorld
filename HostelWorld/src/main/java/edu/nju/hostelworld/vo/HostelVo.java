@@ -22,6 +22,7 @@ public class HostelVo {
     private String description;
     private String host;
     private List<RoomVo> rooms;
+    private String address;
 
     public HostelVo(Hostel hostel){
         BeanUtils.copyProperties(hostel,this,"rooms");
@@ -109,5 +110,13 @@ public class HostelVo {
 
     public void setRooms(List<RoomVo> rooms) {
         this.rooms = rooms;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

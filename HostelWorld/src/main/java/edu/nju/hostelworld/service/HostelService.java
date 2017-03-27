@@ -2,6 +2,7 @@ package edu.nju.hostelworld.service;
 
 import edu.nju.hostelworld.model.Hostel;
 import edu.nju.hostelworld.model.Room;
+import edu.nju.hostelworld.vo.HostelVo;
 
 import java.util.List;
 
@@ -18,11 +19,28 @@ public interface HostelService {
     Hostel saveHostel(Hostel hostel);
 
     /**
-     * 客栈修改信息
-     * @param hostel
+     * 新增客栈
+     * @param hostelName 客栈名
+     * @param password 密码
+     * @param hostelSeq 客栈序列号
+     * @param bankAccount 银行账户
      * @return
      */
+    HostelVo saveHostel(String hostelName,String password,String hostelSeq,String bankAccount);
+
     Hostel updateHostel(Hostel hostel);
+
+    /**
+     * 修改客栈信息
+     * @param hostelName 客栈名称
+     * @param bankAccount 银行账户
+     * @param description 描述
+     * @param host 客栈主人
+     * @param address 地址
+     * @return
+     */
+    HostelVo updateHostel(int hostelId, String hostelName,String bankAccount,String description,
+                        String host,String address);
 
     /**
      * 使用客栈序列号查找客栈
@@ -44,7 +62,7 @@ public interface HostelService {
      * @param status
      * @return
      */
-    List<Hostel> findHostel(int status);
+    List<HostelVo> findHostel(int status);
 
     /**
      * 经理登陆时验证账户名和密码
@@ -60,6 +78,8 @@ public interface HostelService {
      * @return
      */
     boolean isHostelSeqExist(String hostelSeq);
+
+    HostelVo findHostelDetail(int hostelId);
 
 
 }

@@ -62,13 +62,14 @@
                     <li> <span class="tag">状态:&nbsp&nbsp&nbsp</span>
                         <%switch(((Hostel)request.getAttribute("hostel")).getStatus()){
                             case 0: out.print("<span class='value my-yellow'>申请审批中</span>");break;
-                            case 1: out.print("<span class='value my-blue'>申请已通过</span>");break;
-                            case 2: out.print("<span class='value my-red'>申请已拒绝</span>");break;
+                            case 1: out.print("<span class='value my-green'>申请已通过</span>");break;
+                            case -1: out.print("<span class='value my-red'>申请已拒绝</span>");break;
                         }%></li>
                     <li> <span class="tag">账户余额:&nbsp&nbsp&nbsp</span><span class="value">${hostel.balance}</span></li>
                     <li> <span class="tag">客栈主人:&nbsp&nbsp&nbsp</span><span class="value">${hostel.host}</span></li>
                     <li> <span class="tag">客栈序列号:&nbsp&nbsp&nbsp</span><span class="value">${hostel.hostelSeq}</span> </li>
                     <li> <span class="tag">银行账户:&nbsp&nbsp&nbsp</span><span class="value">${hostel.bankAccount}</span></li>
+                    <li> <span class="tag">客栈地址:&nbsp&nbsp&nbsp</span><span class="value">${hostel.address}</span></li>
                     <li> <span class="tag">客栈描述:&nbsp&nbsp&nbsp</span><span class="value">${hostel.description}</span></li>
                 </ul>
             </div>
@@ -105,6 +106,10 @@
                     <div >
                         <span class="modal-param">银行账户：</span>
                         <input type="text" class="param-text" name="bankAccount" value="${hostel.bankAccount}">
+                    </div><br>
+                    <div >
+                        <span class="modal-param">客栈地址：</span>
+                        <input type="text" class="param-text" name="address" value="${hostel.address}" >
                     </div><br>
                     <div >
                         <span class="modal-param">客栈描述：</span>

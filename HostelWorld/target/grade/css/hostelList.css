@@ -1,0 +1,37 @@
+.hostelName{
+    color:#5299C0;
+    font-weight: bold;
+}
+
+.tag{
+    display:block;
+    font-size: 14px;
+    font-weight:bolder;
+    color:rgb(100,100,100)
+}
+
+.value{
+    font-weight:normal;
+}
+
+.description{
+    height:40px;
+    margin-top:5px;
+    color:rgb(100,100,100);
+}
+
+.hostel-list-item{
+    height:200px;
+    box-shadow:5px 5px 5px #888888 ;
+    margin-right:80px;
+    margin-bottom:30px;
+}
+
+.detail{
+    width:85px;
+    display: block;
+    float:right;
+    margin-right:10px;
+    text-align: center;
+    margin-top:5px;
+}
