@@ -30,7 +30,7 @@
                 <li><a href="/hostel/list">首页</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="float-right"><a href="#">${sessionScope.username}</a></li>
+                <li class="float-right"><a href="#">${hostelSeq}</a></li>
                 <li class="float-right"><a href="/user/logout">退出登录</a></li>
             </ul>
         </div>
@@ -43,8 +43,11 @@
     <!--侧边栏-->
     <div class="col-sm-3 col-md-2 sidebar my-sidebar float-left">
         <ul class="nav nav-sidebar">
-            <li><a href="/user/userInfo">基本信息</a></li>
-            <li><a href="#">我的预约</a></li>
+            <li><a href="/hostel/info/${hostelId}">客栈信息</a></li>
+            <li><a href="#">发布计划</a></li>
+            <li><a href="#">入店登记</a></li>
+            <li><a href="#">离店登记</a></li>
+            <li><a href="#">客栈统计</a></li>
         </ul>
     </div>
 
@@ -54,18 +57,18 @@
             <hr>
             <div class="col-sm-12">
                 <div class="reserve-title">
-                    <div class="col-sm-1">客栈名称</div>
+                    <div class="col-sm-1">预订人</div>
                     <div class="col-sm-2">入住日期</div>
                     <div class="col-sm-2">退房日期</div>
                     <div class="col-sm-2">类型</div>
                     <div class="col-sm-1">房间数量</div>
                     <div class="col-sm-2">地址</div>
                     <div class="col-sm-1">支付</div>
-                    <div class="col-sm-1">取消预订</div>
+                    <div class="col-sm-1">入住登记</div>
                 </div>
-                <div class="reserve-list" id="reserve-list">
-                    <div class="reserve-item">
-                        <div class="col-sm-1 hostelName">1</div>
+                <div class="reserve-list" id="check-reserve-list">
+                    <div class="check-reserve-item">
+                        <div class="col-sm-1 reserver-name">1</div>
                         <div class="col-sm-2 start">2017.10.20</div>
                         <div class="col-sm-2 end">2017.11.20</div>
                         <div class="col-sm-2 type">单人房</div>
@@ -73,32 +76,12 @@
                         <div class="col-sm-2 address">鼓楼，南京</div>
                         <div class="col-sm-1 payMoney">150</div>
                         <div class="col-sm-1">
-                            <button class="btn btn-default my-btn reserve-cancel" data-toggle="modal" data-target="#cancelModal1" >
-                                取消预订</button>
-                        </div>
-                        <%--取消预订模态框--%>
-                        <div class="modal fade cancelReserveModal" id="cancelModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        <h4 class="modal-title grey-color">取消预订</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div >
-                                            <span class="modal-param">取消预订后只能退还您一半的钱款，确认取消吗？</span>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal">不取消</button>
-                                        <button type="button" class="btn btn-primary btn-confirm button-confirm-cancel" data-dismiss="modal" >确认取消</button>
-                                    </div>
-                                </div>
-                            </div>
+                            <button class="btn btn-default my-btn checkIn" data-toggle="modal" data-target="#checkIn" >
+                                入住登记</button>
                         </div>
                     </div>
-                    <div class="reserve-item">
-                        <div class="col-sm-1 hostelName">1</div>
+                    <div class="check-reserve-item">
+                        <div class="col-sm-1 reserver-name">1</div>
                         <div class="col-sm-2 start">2017.10.20</div>
                         <div class="col-sm-2 end">2017.11.20</div>
                         <div class="col-sm-2 type">单人房</div>
@@ -106,12 +89,12 @@
                         <div class="col-sm-2 address">鼓楼，南京</div>
                         <div class="col-sm-1 payMoney">150</div>
                         <div class="col-sm-1">
-                            <button class="btn btn-default my-btn reserve-cancel" >
-                                取消预订</button>
+                            <button class="btn btn-default my-btn checkIn" data-toggle="modal" data-target="#checkIn" >
+                                入住登记</button>
                         </div>
                     </div>
-                    <div class="reserve-item">
-                        <div class="col-sm-1 hostelName">1</div>
+                    <div class="check-reserve-item">
+                        <div class="col-sm-1 reserver-name">1</div>
                         <div class="col-sm-2 start">2017.10.20</div>
                         <div class="col-sm-2 end">2017.11.20</div>
                         <div class="col-sm-2 type">单人房</div>
@@ -119,45 +102,30 @@
                         <div class="col-sm-2 address">鼓楼，南京</div>
                         <div class="col-sm-1 payMoney">150</div>
                         <div class="col-sm-1">
-                            <button class="btn btn-default my-btn reserve-cancel" >
-                                取消预订</button>
+                            <button class="btn btn-default my-btn checkIn" data-toggle="modal" data-target="#checkIn" >
+                                入住登记</button>
+                        </div>
+                    </div>
+                    <div class="check-reserve-item">
+                        <div class="col-sm-1 reserver-name">1</div>
+                        <div class="col-sm-2 start">2017.10.20</div>
+                        <div class="col-sm-2 end">2017.11.20</div>
+                        <div class="col-sm-2 type">单人房</div>
+                        <div class="col-sm-1 num">10</div>
+                        <div class="col-sm-2 address">鼓楼，南京</div>
+                        <div class="col-sm-1 payMoney">150</div>
+                        <div class="col-sm-1">
+                            <button class="btn btn-default my-btn checkIn" data-toggle="modal" data-target="#checkIn" >
+                                入住登记</button>
                         </div>
                     </div>
 
+
+
                 </div>
+
             </div>
 
-            <div class="clearfix"></div>
-            <h3>已完成预约</h3>
-            <hr>
-            <div class="col-sm-12">
-                <div class="reserve-title">
-                    <div class="col-sm-1">客栈名称</div>
-                    <div class="col-sm-2">入住日期</div>
-                    <div class="col-sm-2">退房日期</div>
-                    <div class="col-sm-2">类型</div>
-                    <div class="col-sm-1">房间数量</div>
-                    <div class="col-sm-2">地址</div>
-                    <div class="col-sm-1">支付</div>
-                    <div class="col-sm-1">取消预订</div>
-                </div>
-                <div class="reserve-list" id="finished-reserve-list">
-                    <div class="reserve-item">
-                        <div class="col-sm-1 hostelName">1</div>
-                        <div class="col-sm-2 start">2017.10.20</div>
-                        <div class="col-sm-2 end">2017.11.20</div>
-                        <div class="col-sm-2 type">单人房</div>
-                        <div class="col-sm-1 num">10</div>
-                        <div class="col-sm-2 address">鼓楼，南京</div>
-                        <div class="col-sm-1 payMoney">150</div>
-                        <div class="col-sm-1">
-                            <button class="btn btn-default my-btn reserve-cancel"  >
-                                已完成</button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
 
 
         </div>
@@ -165,21 +133,26 @@
 </div>
 
 <!--取消预约模态框-->
-<div class="modal fade" id="cancelReserve" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="checkIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title grey-color">取消预订</h4>
+                <h4 class="modal-title grey-color">入住登记</h4>
             </div>
-            <div class="modal-body">
-                <div >
-                    <span class="modal-param">取消预订后只能退还您一半的钱款，确认取消吗？</span>
+            <div class="modal-body" id="liver-list">
+                <div class="liver-item" >
+                    <span class="modal-param">入住人姓名：</span>
+                    <input type="text" name="livername" class="liver">
+                    <button class="add-minus glyphicon glyphicon-minus-sign minusLiver" ></button>
                 </div>
             </div>
+            <div>
+                <button class="glyphicon glyphicon-plus add-minus" id="addLiver" style="color:rgb(100,100,100);"></button>
+            </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal">不取消</button>
-                <button type="button" class="btn btn-primary btn-confirm" data-dismiss="modal">确认取消</button>
+                <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary btn-confirm" id="confirmCheck" data-dismiss="modal">确认</button>
             </div>
         </div>
     </div>
@@ -189,6 +162,23 @@
 
 <script src="../plugin/jquery/jquery-3.1.1.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script src="../js/checkIn.js"></script>
+<script type="text/javascript">
+    $(document).ready(
+            function(){
+                CheckReserveList.init();
+                $.get({
+                    url:"/hostel/checkReserve/"+${hostelId},
+                    success:function(newList){
+                        CheckReserveList.updateData(newList);
+                    },
+                    error:function(){
+                        console.log("get check reserves wrong!");
+                    }
+                })
+            }
+    )
+</script>
 
 </body>
 </html>

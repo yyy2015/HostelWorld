@@ -15,7 +15,7 @@ public class LiverVo {
 
     public LiverVo(Liver liver){
         BeanUtils.copyProperties(liver,this,"live");
-        live = new LiveVo(liver.getLive());
+//        live = new LiveVo(liver.getLive());
     }
 
     public int getId() {

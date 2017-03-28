@@ -37,12 +37,13 @@ public class RoomVo {
         startDate = DateTrans.time2String(room.getStartDate());
         endDate = DateTrans.time2String(room.getEndDate());
 
-        if(room.getLives() != null) {
-            lives = new ArrayList<LiveVo>();
-            for (Live live : room.getLives()) {
-                lives.add(new LiveVo(live));
-            }
-        }
+//        if(room.getLives() != null) {
+//            lives = new ArrayList<LiveVo>();
+//            for (Live live : room.getLives()) {
+//                lives.add(new LiveVo(live));
+//            }
+//        }
+
 //        if(room.getReserves() != null) {
 //            reserves = new ArrayList<ReserveVo>();
 //            for (Reserve reserve : room.getReserves()) {

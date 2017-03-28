@@ -141,14 +141,17 @@ public class RoomServiceImpl implements RoomService{
 
     @Transactional
     public LiveVo checkIn(int reserveId, int roomId, int roomNum, Timestamp start, Timestamp end, List<String> livers) {
+
+
+        Room room = roomDao.findById(roomId);
+
         if(reserveId > 0){//会员预订好的房间入住登记
             Reserve reserve = reserveDao.findById(reserveId);
             reserve.setStatus(1);//预订订单已完成
             reserveDao.save(reserve);
+        }else{
+            room.setNum(room.getNum()-roomNum);//非会员入住，客栈房间数减少
         }
-
-        Room room = roomDao.findById(roomId);
-        room.setNum(room.getNum()-roomNum);//客栈房间数减少
 
         Live live = new Live(room,start,end,roomNum);
         live = liveDao.save(live);
@@ -157,10 +160,12 @@ public class RoomServiceImpl implements RoomService{
         for(String name:livers){
             Liver tenant = new Liver();
             tenant.setLivername(name);
-            tenant.setId(live.getId());
+            tenant.setLive(live);
+//            tenant.setId(live.getId());
             liverDao.save(tenant);//这里是否重复操作了？
             tenantList.add(tenant);
         }
+
         live.setLivers(tenantList);//这里是否重复操作了？
 
         return new LiveVo(liveDao.save(live));
@@ -189,7 +194,8 @@ public class RoomServiceImpl implements RoomService{
             List<Reserve> tempList = reserveDao.findByRoom_IdAndStatus(room.getId(),status);
             for(Reserve reserve:tempList){
                 ReserveVo vo = new ReserveVo(reserve);
-                vo.setHostelName(hostel.getHostelName());
+                String username = reserve.getUser().getUsername();
+                vo.setUserName(username);
                 reserveList.add(vo);
             }
         }

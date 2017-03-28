@@ -79,6 +79,8 @@ public interface HostelService {
      */
     boolean isHostelSeqExist(String hostelSeq);
 
+    Hostel findHostelById(int hostelId);
+
     HostelVo findHostelDetail(int hostelId);
 
 

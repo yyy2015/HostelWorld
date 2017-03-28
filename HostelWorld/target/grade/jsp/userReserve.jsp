@@ -80,8 +80,28 @@
                         <div class="col-sm-2 address">鼓楼，南京</div>
                         <div class="col-sm-1 payMoney">150</div>
                         <div class="col-sm-1">
-                            <button class="btn btn-default my-btn reserve-cancel" data-toggle="modal" data-target="#cancelReserve" >
+                            <button class="btn btn-default my-btn reserve-cancel" data-toggle="modal">
                                 取消预订</button>
+                        </div>
+                        <%--取消预订模态框--%>
+                        <div class="modal fade cancelReserveModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title grey-color">取消预订</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div >
+                                            <span class="modal-param">取消预订后只能退还您一半的钱款，确认取消吗？</span>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal">不取消</button>
+                                        <button type="button" class="btn btn-primary btn-confirm button-confirm-cancel" data-dismiss="modal" >确认取消</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="reserve-item">
@@ -129,7 +149,7 @@
                     <div class="col-sm-1">取消预订</div>
                 </div>
                 <div class="reserve-list" id="finished-reserve-list">
-                    <div class="reserve-item">
+                    <div class="finish-reserve-item">
                         <div class="col-sm-1 hostelName">1</div>
                         <div class="col-sm-2 start">2017.10.20</div>
                         <div class="col-sm-2 end">2017.11.20</div>
@@ -141,6 +161,7 @@
                             <button class="btn btn-default my-btn reserve-cancel"  >
                                 已完成</button>
                         </div>
+
                     </div>
 
                 </div>
@@ -196,7 +217,18 @@
                 tempGrid.find(".address").eq(0).text(reserve.room.address);
                 tempGrid.find(".payMoney").eq(0).text(reserve.payMoney);
 
-                $("#confirmCancel").click(function(){
+                //填模态框的坑
+                var modal = tempGrid.find(".cancelReserveModal").eq(0);
+                var modelId = "cancelModel"+i;
+                modal.attr("id",modelId);
+
+                var toCancel = tempGrid.find(".reserve-cancel").eq(0);
+                toCancel.attr("data-target","#"+modelId);
+
+                var confirmCancel = tempGrid.find(".button-confirm-cancel").eq(0);
+
+                confirmCancel.click(function(){
+                    console.log("here!");
                     $.get({
                         url:"/user/cancelReserve/"+reserve.id,
                         data:{
@@ -217,6 +249,30 @@
         }
     }
 
+    var FinishList = {
+        init:function(){
+            this.gridsFather = $("#finished-reserve-list");
+            this.lastGrid = $(".finish-reserve-item").eq(0);
+        },
+        updateData:function(list){
+            this.gridsFather.empty();
+            var _this = this;
+            $.each(list,function(i,reserve){
+                var tempGrid = _this.lastGrid.clone(true);
+                tempGrid.find(".hostelName").eq(0).text(reserve.hostelName);
+                tempGrid.find(".start").eq(0).text(reserve.startDate);
+                tempGrid.find(".end").eq(0).text(reserve.endDate);
+                tempGrid.find(".type").eq(0).text(reserve.room.type);
+                tempGrid.find(".num").eq(0).text(reserve.num);
+                tempGrid.find(".address").eq(0).text(reserve.room.address);
+                tempGrid.find(".payMoney").eq(0).text(reserve.payMoney);
+                _this.gridsFather.append(tempGrid);
+            })
+        }
+    }
+
+
+
     $(document).ready(
             function(){
                 ReserveList.init();
@@ -227,6 +283,17 @@
                     },
                     error:function(){
                         console.log("get reserve list wrong!");
+                    }
+                })
+
+                FinishList.init();
+                $.get({
+                    url:"/user/getFinish/"+${userId},
+                    success:function(newList){
+                        FinishList.updateData(newList);
+                    },
+                    error:function () {
+                        console.log("get finished reserve list wrong!");
                     }
                 })
             }

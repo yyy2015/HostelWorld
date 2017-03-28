@@ -58,6 +58,7 @@ li .value{
 .record-title{
     font-size:18px;
     font-weight:600;
+    height:50px;
 }
 
 .record-list-item{
@@ -92,16 +93,33 @@ li .value{
     color:rgb(100,100,100);
 }
 
-.reserve-item{
+.reserve-item,.check-reserve-item{
     margin-top:10px;
     height:40px;
 }
 
-.reserve-cancel,.reserve-cancel:focus{
+.finish-reserve-item{
+    margin-top:10px;
+    height:40px;
+}
+
+.reserve-cancel,.reserve-cancel:focus,.checkIn,.checkIn:focus{
     position:relative;
     width:90px;
     height:30px;
     background-image: none;
     right:15px;
 }
+
+.add-minus,.add-minus:hover{
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.liver-item{
+    margin-top:5px;
+}
+
 

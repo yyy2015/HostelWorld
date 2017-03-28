@@ -8,13 +8,13 @@
 
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../img/icon.png">
+    <link rel="icon" href="/img/icon.png">
 
     <title>UserInfo</title>
 
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" >
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <link rel="stylesheet" type="text/css" href="../css/userInfo.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/userInfo.css">
 
 
 <body>
@@ -28,7 +28,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img class="my-logo" src="../img/h-logo.png">
+            <img class="my-logo" src="/img/h-logo.png">
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -50,7 +50,7 @@
         <ul class="nav nav-sidebar">
             <li><a href="#">客栈信息</a></li>
             <li><a href="/jsp/hostelReleasePlan.jsp">发布计划</a></li>
-            <li><a href="#">入店登记</a></li>
+            <li><a href="/jsp/hostelCheckIn.jsp">入店登记</a></li>
             <li><a href="#">离店登记</a></li>
             <li><a href="#">客栈统计</a></li>
         </ul>
@@ -128,29 +128,9 @@
         </div>
     </div>
 </div>
-<!--关闭客栈模态框-->
-<div class="modal fade" id="stop-hostel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title grey-color">停用会员</h4>
-            </div>
-            <div class="modal-body">
-                <div >
-                    <span class="modal-param">停用会员将清空您的所有信息，确认停用吗？</span>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary btn-confirm" data-dismiss="modal">确认</button>
-            </div>
-        </div>
-    </div>
-</div>
 
-<script src="../plugin/jquery/jquery-3.1.1.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="/plugin/jquery/jquery-3.1.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 
 
 </body>

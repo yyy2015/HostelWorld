@@ -5,17 +5,16 @@ import edu.nju.hostelworld.service.HostelService;
 import edu.nju.hostelworld.service.RoomService;
 import edu.nju.hostelworld.util.DateTrans;
 import edu.nju.hostelworld.vo.HostelVo;
+import edu.nju.hostelworld.vo.ReserveVo;
 import edu.nju.hostelworld.vo.RoomVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -53,6 +52,13 @@ public class HostelController {
         return "hostelHome";
     }
 
+    @RequestMapping("/info/{hostelId}")
+    public String jumpToInfo(@PathVariable int hostelId,Model model){
+        Hostel hostel = hostelService.findHostelById(hostelId);
+        model.addAttribute("hostel",hostel);
+        return "hostelHome";
+    }
+
     @RequestMapping("/list")
     @ResponseBody
     public List<HostelVo> getHostelList(HttpSession session){
@@ -84,8 +90,32 @@ public class HostelController {
         Timestamp start = DateTrans.string2time(startDate);
         Timestamp end = DateTrans.string2time(endDate);
         roomService.releaseRoomPlan(hostelId,realType,price,address,num,start,end);
-
         return "hostelReleasePlan";
+    }
+
+    @RequestMapping("/checkIn")
+    @ResponseBody
+    public List<ReserveVo> checkIn(@RequestParam int reserveId,@RequestParam int roomId,
+                          @RequestParam int roomNum,@RequestParam String start,@RequestParam String end,
+                          @RequestParam String livers){
+        Timestamp startDate = DateTrans.string2time(start);
+        Timestamp endDate = DateTrans.string2time(end);
+        String[] array = livers.split("~");
+        List<String> list = new ArrayList<String>();
+        for(int i=0;i<array.length;i++){
+            list.add(array[i]);
+            System.out.println("array element is:"+array[i]);
+        }
+        roomService.checkIn(reserveId,roomId,roomNum,startDate,endDate,list);
+        RoomVo room = roomService.getOneRoom(roomId);
+        int hostelId = room.getHostel().getId();
+        return getCheckReserve(hostelId);
+    }
+
+    @RequestMapping("/checkReserve/{hostelId}")
+    @ResponseBody
+    public List<ReserveVo> getCheckReserve(@PathVariable int hostelId){
+        return roomService.getReserveList(hostelId,0);
     }
 
 

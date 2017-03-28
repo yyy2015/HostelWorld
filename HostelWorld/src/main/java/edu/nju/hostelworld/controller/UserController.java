@@ -7,10 +7,7 @@ import edu.nju.hostelworld.service.RoomService;
 import edu.nju.hostelworld.service.UserService;
 import edu.nju.hostelworld.strategy.DiscountStrategy;
 import edu.nju.hostelworld.util.DateTrans;
-import edu.nju.hostelworld.vo.HostelVo;
-import edu.nju.hostelworld.vo.ReserveVo;
-import edu.nju.hostelworld.vo.RoomVo;
-import edu.nju.hostelworld.vo.UserVo;
+import edu.nju.hostelworld.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -300,7 +297,17 @@ public class UserController {
         return getReserve(userId);
     }
 
+    @RequestMapping("/getFinish/{userId}")
+    @ResponseBody
+    public List<ReserveVo> getFinishReserve(@PathVariable int userId){
+        return roomService.getUserReserveList(userId,1);
+    }
 
+    @RequestMapping("/getRecord/{userId}")
+    @ResponseBody
+    public List<RecordVo> getUserRecord(@PathVariable int userId){
+        return userService.getRecordList(userId);
+    }
 
 
     /**

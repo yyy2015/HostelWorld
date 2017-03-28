@@ -2,6 +2,7 @@ package edu.nju.hostelworld.vo;
 
 import edu.nju.hostelworld.model.Record;
 import edu.nju.hostelworld.model.User;
+import edu.nju.hostelworld.util.DateTrans;
 import org.springframework.beans.BeanUtils;
 
 import java.sql.Timestamp;
@@ -11,13 +12,19 @@ import java.sql.Timestamp;
  */
 public class RecordVo {
     private int id;
-    private Timestamp createdAt;
+    private String createdAt;
     private String reason;
-    private double money;
+    private String money;
     private UserVo user;
 
     public RecordVo(Record record){
-        BeanUtils.copyProperties(record,this,"user");
+        BeanUtils.copyProperties(record,this,"createAt","money","user");
+        createdAt = DateTrans.time2String(record.getCreatedAt());
+        if(record.getMoney()>0){
+            money = "+"+record.getMoney();
+        }else{
+            money = ""+record.getMoney();
+        }
 //        user = new UserVo(record.getUser());
     }
 
@@ -29,11 +36,11 @@ public class RecordVo {
         this.id = id;
     }
 
-    public Timestamp getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Timestamp createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -45,11 +52,11 @@ public class RecordVo {
         this.reason = reason;
     }
 
-    public double getMoney() {
+    public String getMoney() {
         return money;
     }
 
-    public void setMoney(double money) {
+    public void setMoney(String money) {
         this.money = money;
     }
 

@@ -73,8 +73,28 @@
                         <div class="col-sm-2 address">鼓楼，南京</div>
                         <div class="col-sm-1 payMoney">150</div>
                         <div class="col-sm-1">
-                            <button class="btn btn-default my-btn reserve-cancel" data-toggle="modal" data-target="#cancelReserve" >
+                            <button class="btn btn-default my-btn reserve-cancel" data-toggle="modal" data-target="#cancelModal1" >
                                 取消预订</button>
+                        </div>
+                        <%--取消预订模态框--%>
+                        <div class="modal fade cancelReserveModal" id="cancelModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title grey-color">取消预订</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div >
+                                            <span class="modal-param">取消预订后只能退还您一半的钱款，确认取消吗？</span>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal">不取消</button>
+                                        <button type="button" class="btn btn-primary btn-confirm button-confirm-cancel" data-dismiss="modal" >确认取消</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="reserve-item">

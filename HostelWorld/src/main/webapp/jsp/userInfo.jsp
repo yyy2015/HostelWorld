@@ -95,22 +95,17 @@
         <div class="sub-title">
             <h3>账单明细</h3>
             <hr>
-            <div class="total-part">
-                <span class="tag-times">累计消费次数：<span class="total-value">${user.shopTimes}</span></span>
-                <span class="tag-money">累计消费金额：<span class="total-value">${user.shopTotal}</span></span>
-            </div>
-            <hr>
             <div class="record-part">
                 <div class="record-title">
                     <div class="col-sm-3">日期</div>
                     <div class="col-sm-6">明细</div>
                     <div class="col-sm-3">金额</div>
                 </div>
-                <div class="record-list">
+                <div class="record-list" id="record-list">
                     <div class="record-list-item ">
-                        <div class="col-sm-3">2017-3-15</div>
-                        <div class="col-sm-6">预订两间酒店大床非常棒预订两间酒店大床非常棒预订两间酒店大床非常棒</div>
-                        <div class="col-sm-3">-1500</div>
+                        <div class="col-sm-3 create">2017-3-15</div>
+                        <div class="col-sm-6 message">预订两间酒店大床非常棒预订两间酒店大床非常棒预订两间酒店大床非常棒</div>
+                        <div class="col-sm-3 money">-1500</div>
                     </div>
                     <div class="record-list-item ">
                         <div class="col-sm-3">2017-3-15</div>
@@ -228,7 +223,41 @@
 
 <script src="../plugin/jquery/jquery-3.1.1.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    var Recordlist = {
+        init:function(){
+            this.gridsFather = $("#record-list");
+            this.lastGrid = $(".record-list-item").eq(0);
+        },
+        updateData:function(recordList){
+            this.gridsFather.empty();
+            var _this = this;
+            $.each(recordList,function(i,record){
+                var tempGrid = _this.lastGrid.clone(true);
+                tempGrid.find(".create").eq(0).text(record.createdAt);
+                tempGrid.find(".message").eq(0).text(record.reason);
+                tempGrid.find(".money").eq(0).text(record.money);
 
+                _this.gridsFather.append(tempGrid);
+            })
+        }
+    }
+
+    $(document).ready(
+            function(){
+                Recordlist.init();
+                $.get({
+                    url:"/user/getRecord/"+${userId},
+                    success:function(newList){
+                        Recordlist.updateData(newList);
+                    },
+                    error:function(){
+                        console.log("get record list wrong!");
+                    }
+                })
+            }
+    )
+</script>
 
 </body>
 </html>

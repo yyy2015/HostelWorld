@@ -3,6 +3,7 @@ package edu.nju.hostelworld.vo;
 import edu.nju.hostelworld.model.Reserve;
 import edu.nju.hostelworld.model.Room;
 import edu.nju.hostelworld.model.User;
+import edu.nju.hostelworld.util.DateTrans;
 import org.springframework.beans.BeanUtils;
 
 import java.sql.Timestamp;
@@ -14,18 +15,21 @@ public class ReserveVo {
 
     private int id;
     private int status;
-    private Timestamp startDate;
-    private Timestamp endDate;
+    private String startDate;
+    private String endDate;
     private int roomNum;
     private UserVo user;
     private RoomVo room;
     private double payMoney;
 
     private String hostelName;
+    private String userName;
 
     public ReserveVo(Reserve reserve){
-        BeanUtils.copyProperties(reserve,this,"user","room");
+        BeanUtils.copyProperties(reserve,this,"startDate","endDate","user","room");
 //        user = new UserVo(reserve.getUser());
+        startDate = DateTrans.time2String(reserve.getStartDate());
+        endDate = DateTrans.time2String(reserve.getEndDate());
         room = new RoomVo(reserve.getRoom());
     }
 
@@ -45,19 +49,19 @@ public class ReserveVo {
         this.status = status;
     }
 
-    public Timestamp getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Timestamp startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Timestamp getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Timestamp endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
@@ -99,5 +103,13 @@ public class ReserveVo {
 
     public void setHostelName(String hostelName) {
         this.hostelName = hostelName;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

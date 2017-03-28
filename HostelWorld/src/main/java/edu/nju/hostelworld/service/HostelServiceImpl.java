@@ -86,6 +86,10 @@ public class HostelServiceImpl implements HostelService {
         return true;
     }
 
+    public Hostel findHostelById(int hostelId) {
+        return hostelDao.findById(hostelId);
+    }
+
     public HostelVo findHostelDetail(int hostelId) {
         return new HostelVo(hostelDao.findById(hostelId));
     }
