@@ -151,7 +151,9 @@ public class RoomServiceImpl implements RoomService{
             reserveDao.save(reserve);
         }else{
             room.setNum(room.getNum()-roomNum);//非会员入住，客栈房间数减少
+            room = roomDao.save(room);
         }
+
 
         Live live = new Live(room,start,end,roomNum);
         live = liveDao.save(live);

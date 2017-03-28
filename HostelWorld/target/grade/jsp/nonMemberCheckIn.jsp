@@ -1,25 +1,31 @@
 <%--
   Created by IntelliJ IDEA.
   User: yyy
-  Date: 2017/3/28
-  Time: 19:56
+  Date: 2017/3/29
+  Time: 1:36
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="../img/icon.png">
-    <title>userReserve</title>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../img/icon.png">
+
+    <title>plan</title>
 
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" >
+
+    <link rel="stylesheet" href="../plugin/datePicker/css/bootstrap-combined.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../plugin/datePicker/css/bootstrap-datetimepicker.min.css">
+
     <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <link rel="stylesheet" type="text/css" href="../css/userInfo.css">
+    <link rel="stylesheet" type="text/css" href="../css/hostelReleasePlan.css">
+    <link rel="stylesheet" type="text/css" href="../css/noMemberCheckIn.css">
 
-</head>
+
 <body>
-
 <!--导航栏-->
 <nav class="navbar navbar-inverse navbar-fixed-top my-nav">
     <div class="container">
@@ -34,7 +40,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/hostel/list">首页</a></li>
+                <li><a href="#">首页</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="float-right"><a href="#">${hostelSeq}</a></li>
@@ -61,37 +67,38 @@
     <div class="col-sm-9 col-md-10 main-content float-right ">
         <div class="sub-title">
             <div>
-                <a class="check-active check-tag" href="#">会员登记</a>
+                <a class="check-tag" href="/jsp/hostelCheckIn.jsp">会员登记</a>
                 <h3 style="display: inline">&nbsp/&nbsp</h3>
-                <a class="check-tag" href="/jsp/nonMemberCheckIn.jsp">非会员登记</a>
+                <a class="check-active check-tag">非会员登记</a>
             </div>
             <hr>
-            <div class="col-sm-12">
-                <div class="reserve-title">
-                    <div class="col-sm-1">预订人</div>
-                    <div class="col-sm-2">入住日期</div>
-                    <div class="col-sm-2">退房日期</div>
-                    <div class="col-sm-2">类型</div>
-                    <div class="col-sm-1">房间数量</div>
+            <div class="col-sm-12 plan-list">
+                <div class="plan-title">
+                    <div class="col-sm-1">编号</div>
+                    <div class="col-sm-2">开始日期</div>
+                    <div class="col-sm-2">结束日期</div>
+                    <div class="col-sm-2">房间类型</div>
+                    <div class="col-sm-1">剩余</div>
                     <div class="col-sm-2">地址</div>
-                    <div class="col-sm-1">支付</div>
-                    <div class="col-sm-1">入住登记</div>
+                    <div class="col-sm-1">价格</div>
+                    <div class="col-sm-1">登记</div>
                 </div>
-                <div class="reserve-list" id="check-reserve-list">
-                    <div class="check-reserve-item">
-                        <div class="col-sm-1 reserver-name">1</div>
+                <div class="plan-body" id="plan-body-list">
+                    <div class="plan-body-item">
+                        <div class="col-sm-1 no">1</div>
                         <div class="col-sm-2 start">2017.10.20</div>
                         <div class="col-sm-2 end">2017.11.20</div>
                         <div class="col-sm-2 type">单人房</div>
                         <div class="col-sm-1 num">10</div>
                         <div class="col-sm-2 address">鼓楼，南京</div>
-                        <div class="col-sm-1 payMoney">150</div>
-                        <div class="col-sm-1">
-                            <button class="btn btn-default my-btn checkIn" data-toggle="modal" >
+                        <div class="col-sm-1 "><span class="price">100</span>/每晚</div>
+                        <div class="col-sm-1 ">
+                            <button class="btn btn-default my-btn notMemberCheck" data-toggle="modal" data-target="#xx" >
                                 入住登记</button>
                         </div>
-                        <!--添加入住人模态框-->
-                        <div class="modal fade checkModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+                        <!--非会员入住登记模态框-->
+                        <div class="modal fade checkModal" id="xx" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -99,6 +106,29 @@
                                         <h4 class="modal-title grey-color">入住登记</h4>
                                     </div>
                                     <div class="modal-body liver-list">
+                                        <div>
+                                            <span class="modal-param">入住日期：</span>
+                                            <div class="input-append date my-date-picker">
+                                                <input type="text" name="startDate" class="startDate" />
+                                                <span class="add-on">
+                                                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        </div><br>
+                                        <div >
+                                            <span class="modal-param">离店日期：</span>
+                                            <div class="input-append date my-date-picker">
+                                                <input type="text" name="endDate" class="endDate" />
+                                                <span class="add-on">
+                                                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        </div><br>
+                                        <div>
+                                            <span class="modal-param">房间数量：</span>
+                                            <input type="text" name="roomNum" value="1" class="roomNum" >
+                                        </div><br>
+
                                         <div class="liver-item" >
                                             <span class="modal-param">入住人姓名：</span>
                                             <input type="text" name="livername" class="liver">
@@ -115,40 +145,46 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
                 </div>
             </div>
-
-
-
         </div>
+
     </div>
+
 </div>
-
-
-
-
 
 <script src="../plugin/jquery/jquery-3.1.1.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
-<script src="../js/checkIn.js"></script>
+<script src="../plugin/datePicker/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript">
+
+</script>
+
+<script src="../js/nonMemberCheckIn.js"></script>
+
 <script type="text/javascript">
     $(document).ready(
             function(){
-                CheckReserveList.init();
+                NonMemberList.init();
                 $.get({
-                    url:"/hostel/checkReserve/"+${hostelId},
+                    url:"/hostel/roomList/"+${hostelId},
                     success:function(newList){
-                        CheckReserveList.updateData(newList);
+                        NonMemberList.updateData(newList);
                     },
                     error:function(){
-                        console.log("get check reserves wrong!");
+                        console.log("not member check get room list wrong!");
                     }
                 })
             }
     )
 </script>
 
+
+
+
 </body>
 </html>
+

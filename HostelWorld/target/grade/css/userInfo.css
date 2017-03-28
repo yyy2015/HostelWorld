@@ -122,4 +122,17 @@ li .value{
     margin-top:5px;
 }
 
+.check-tag,.check-tag:visited,.check-tag:active{
+    font-size:20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.check-active,.check-active:hover,.check-active:visited,.check-active:active{
+    font-size:25px;
+    color:rgb(222,108,108);
+    text-decoration: none;
+}
+
+
 

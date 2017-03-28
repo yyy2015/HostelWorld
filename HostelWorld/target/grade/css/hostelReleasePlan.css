@@ -31,7 +31,8 @@
     display: inline;
 }
 
-#release-plan,#reserve-room{
+#release-plan,#reserve-room,.checkModal{
     background: transparent;
     width:700px;
 }
+

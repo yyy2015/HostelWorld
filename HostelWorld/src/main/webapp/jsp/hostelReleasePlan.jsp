@@ -34,7 +34,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img class="my-logo" src="../img/h-logo.png">
+            <img class="my-logo" src="/img/h-logo.png">
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -56,7 +56,7 @@
         <ul class="nav nav-sidebar">
             <li><a href="/hostel/info/${hostelId}">客栈信息</a></li>
             <li><a href="#">发布计划</a></li>
-            <li><a href="#">入店登记</a></li>
+            <li><a href="/jsp/hostelCheckIn.jsp">入店登记</a></li>
             <li><a href="#">离店登记</a></li>
             <li><a href="#">客栈统计</a></li>
         </ul>

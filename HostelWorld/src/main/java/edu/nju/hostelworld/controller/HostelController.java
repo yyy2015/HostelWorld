@@ -118,6 +118,28 @@ public class HostelController {
         return roomService.getReserveList(hostelId,0);
     }
 
+    @RequestMapping("/nonMemberCheckIn")
+    public String nonMemberCheck(@RequestParam int roomId,@RequestParam int roomNum,
+                                       @RequestParam String start,@RequestParam String end,
+                                       @RequestParam String livers){
+        Timestamp startDate = DateTrans.string2time(start);
+        Timestamp endDate = DateTrans.string2time(end);
+        String[] array = livers.split("~");
+        List<String> list = new ArrayList<String>();
+        for(int i=0;i<array.length;i++){
+            list.add(array[i]);
+            System.out.println("array element is:"+array[i]);
+        }
+        roomService.checkIn(-1,roomId,roomNum,startDate,endDate,list);
+
+        RoomVo room = roomService.getOneRoom(roomId);
+        int hostelId = room.getHostel().getId();
+
+        return "nonMemberCheckIn";
+
+    }
+
+
 
 
 }
