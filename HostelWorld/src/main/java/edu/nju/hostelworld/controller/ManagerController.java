@@ -3,6 +3,7 @@ package edu.nju.hostelworld.controller;
 import edu.nju.hostelworld.model.Bill;
 import edu.nju.hostelworld.model.Hostel;
 import edu.nju.hostelworld.service.ManagerService;
+import edu.nju.hostelworld.vo.BillVo;
 import edu.nju.hostelworld.vo.HostelVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -48,13 +49,13 @@ public class ManagerController {
 
     @RequestMapping("/bill")
     @ResponseBody
-    public List<Bill> getBills(){
+    public List<BillVo> getBills(){
         return managerService.getBillList();
     }
 
     @RequestMapping("/settle/{hostelId}")
     @ResponseBody
-    public List<Bill> settleAccount(@PathVariable int hostelId){
+    public List<BillVo> settleAccount(@PathVariable int hostelId){
         managerService.settleAccount(hostelId);
         return getBills();
     }

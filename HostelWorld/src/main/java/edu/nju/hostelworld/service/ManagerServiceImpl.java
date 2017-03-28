@@ -4,6 +4,7 @@ import edu.nju.hostelworld.dao.BillDao;
 import edu.nju.hostelworld.dao.HostelDao;
 import edu.nju.hostelworld.model.Bill;
 import edu.nju.hostelworld.model.Hostel;
+import edu.nju.hostelworld.vo.BillVo;
 import edu.nju.hostelworld.vo.HostelVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,8 +43,13 @@ public class ManagerServiceImpl implements ManagerService {
         return  voList;//获取未审批的hostel列表
     }
     @Transactional
-    public List<Bill> getBillList() {
-        return billDao.findAll() ;
+    public List<BillVo> getBillList() {
+        List<Bill> bills = billDao.findAll();
+        List<BillVo> list = new ArrayList<BillVo>();
+        for(Bill bill:bills){
+            list.add(new BillVo(bill));
+        }
+        return list ;
     }
 
     @Transactional

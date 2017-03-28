@@ -2,6 +2,7 @@ package edu.nju.hostelworld.service;
 
 import edu.nju.hostelworld.model.Bill;
 import edu.nju.hostelworld.model.Hostel;
+import edu.nju.hostelworld.vo.BillVo;
 import edu.nju.hostelworld.vo.HostelVo;
 
 import java.util.List;
@@ -28,7 +29,7 @@ public interface ManagerService {
      * 获得待结算账单列表
      * @return
      */
-    List<Bill> getBillList();
+    List<BillVo> getBillList();
 
     /**
      * 将钱结算给客栈

@@ -3,6 +3,7 @@ package edu.nju.hostelworld.vo;
 import edu.nju.hostelworld.model.Live;
 import edu.nju.hostelworld.model.Liver;
 import edu.nju.hostelworld.model.Room;
+import edu.nju.hostelworld.util.DateTrans;
 import org.springframework.beans.BeanUtils;
 
 import java.sql.Timestamp;
@@ -17,19 +18,27 @@ public class LiveVo {
     private int status;
     private RoomVo room;
     private List<LiverVo> livers;
-    private Timestamp startDate;
-    private Timestamp endDate;
+    private String startDate;
+    private String endDate;
     private int roomNum;
 
+    private String liverList;
+
     public LiveVo(Live live){
-        BeanUtils.copyProperties(live,this,"room","livers");
+        BeanUtils.copyProperties(live,this,"room","livers","startDate","endDate");
+        startDate = DateTrans.time2String(live.getStartDate());
+        endDate = DateTrans.time2String(live.getEndDate());
         room = new RoomVo(live.getRoom());
+        liverList = "";
         if(live.getLivers()!=null) {
             livers = new ArrayList<LiverVo>();
             for (Liver tenant : live.getLivers()) {
                 livers.add(new LiverVo(tenant));
+                liverList=liverList + tenant.getLivername()+" ";
             }
         }
+
+
     }
 
     public int getId() {
@@ -64,19 +73,19 @@ public class LiveVo {
         this.livers = liverVos;
     }
 
-    public Timestamp getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Timestamp startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Timestamp getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Timestamp endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
@@ -86,5 +95,13 @@ public class LiveVo {
 
     public void setRoomNum(int roomNum) {
         this.roomNum = roomNum;
+    }
+
+    public String getLiverList() {
+        return liverList;
+    }
+
+    public void setLiverList(String liverList) {
+        this.liverList = liverList;
     }
 }

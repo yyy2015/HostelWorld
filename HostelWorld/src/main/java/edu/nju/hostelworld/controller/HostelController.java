@@ -5,6 +5,7 @@ import edu.nju.hostelworld.service.HostelService;
 import edu.nju.hostelworld.service.RoomService;
 import edu.nju.hostelworld.util.DateTrans;
 import edu.nju.hostelworld.vo.HostelVo;
+import edu.nju.hostelworld.vo.LiveVo;
 import edu.nju.hostelworld.vo.ReserveVo;
 import edu.nju.hostelworld.vo.RoomVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -137,6 +138,19 @@ public class HostelController {
 
         return "nonMemberCheckIn";
 
+    }
+
+    @RequestMapping("/checkOutList/{hostelId}")
+    @ResponseBody
+    public List<LiveVo> getCheckOutList(@PathVariable int hostelId){
+        return roomService.getLiveList(hostelId,0);
+    }
+
+    @RequestMapping("/checkOut/{liveId}")
+    @ResponseBody
+    public String checkOut(@PathVariable int liveId){
+        roomService.checkOut(liveId);
+        return "hostelCheckOut";
     }
 
 

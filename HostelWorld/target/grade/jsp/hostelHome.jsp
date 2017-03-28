@@ -51,7 +51,7 @@
             <li><a href="#">客栈信息</a></li>
             <li><a href="/jsp/hostelReleasePlan.jsp">发布计划</a></li>
             <li><a href="/jsp/hostelCheckIn.jsp">入店登记</a></li>
-            <li><a href="#">离店登记</a></li>
+            <li><a href="/jsp/hostelCheckOut.jsp">离店登记</a></li>
             <li><a href="#">客栈统计</a></li>
         </ul>
     </div>

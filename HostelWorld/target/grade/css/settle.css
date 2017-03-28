@@ -1,0 +1,17 @@
+.settle-title{
+    height:40px;
+    font-size:18px;
+    font-weight: bold;
+    margin-bottom:5px;
+    color:rgb(100,100,100);
+}
+
+.settle-body-item{
+    margin-top:10px;
+    height:40px;
+}
+
+.btn-settle{
+    position:relative;
+    right:20px;
+}
