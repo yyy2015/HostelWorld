@@ -46,7 +46,7 @@
         <ul class="nav nav-sidebar">
             <li><a href="#">待审批</a></li>
             <li><a href="/jsp/managerSettle.jsp">支付结算</a></li>
-            <li><a href="#">信息统计</a></li>
+            <li><a href="/jsp/managerStatistic.jsp">信息统计</a></li>
         </ul>
     </div>
 
