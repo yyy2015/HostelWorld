@@ -29,13 +29,17 @@ public class UserVo {
 
     public UserVo(User user){
         BeanUtils.copyProperties(user,this,"reserves","records");
-        reserves = new ArrayList<ReserveVo>();
-        for(Reserve res:user.getReserves()){
-            reserves.add(new ReserveVo(res));
+        if(user.getReserves()!=null) {
+            reserves = new ArrayList<ReserveVo>();
+            for (Reserve res : user.getReserves()) {
+                reserves.add(new ReserveVo(res));
+            }
         }
-        records = new ArrayList<RecordVo>();
-        for(Record record:user.getRecords()){
-            records.add(new RecordVo(record));
+        if(user.getRecords()!=null) {
+            records = new ArrayList<RecordVo>();
+            for (Record record : user.getRecords()) {
+                records.add(new RecordVo(record));
+            }
         }
     }
 

@@ -60,7 +60,13 @@ public class RoomServiceImpl implements RoomService{
         room.setStartDate(start);
         room.setEndDate(end);
 
-        return new RoomVo(roomDao.save(room));
+        Room entity = roomDao.save(room);
+
+        if(entity.getLives() == null){
+            System.out.println("live list is null!");
+        }
+
+        return new RoomVo(entity);
     }
 
     public List<RoomVo> getRoom(int hostelId) {

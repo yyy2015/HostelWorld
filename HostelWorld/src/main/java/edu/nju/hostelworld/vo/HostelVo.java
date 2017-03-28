@@ -26,9 +26,11 @@ public class HostelVo {
 
     public HostelVo(Hostel hostel){
         BeanUtils.copyProperties(hostel,this,"rooms");
-        rooms = new ArrayList<RoomVo>();
-        for(Room room:hostel.getRooms()){
-            rooms.add(new RoomVo(room));
+        if(hostel.getRooms() != null) {
+            rooms = new ArrayList<RoomVo>();
+            for (Room room : hostel.getRooms()) {
+                rooms.add(new RoomVo(room));
+            }
         }
     }
 

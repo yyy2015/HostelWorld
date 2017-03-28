@@ -24,9 +24,11 @@ public class LiveVo {
     public LiveVo(Live live){
         BeanUtils.copyProperties(live,this,"room","livers");
         room = new RoomVo(live.getRoom());
-        livers = new ArrayList<LiverVo>();
-        for(Liver tenant:live.getLivers()){
-            livers.add(new LiverVo(tenant));
+        if(live.getLivers()!=null) {
+            livers = new ArrayList<LiverVo>();
+            for (Liver tenant : live.getLivers()) {
+                livers.add(new LiverVo(tenant));
+            }
         }
     }
 

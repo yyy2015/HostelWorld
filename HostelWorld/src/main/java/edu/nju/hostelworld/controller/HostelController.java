@@ -2,7 +2,10 @@ package edu.nju.hostelworld.controller;
 
 import edu.nju.hostelworld.model.Hostel;
 import edu.nju.hostelworld.service.HostelService;
+import edu.nju.hostelworld.service.RoomService;
+import edu.nju.hostelworld.util.DateTrans;
 import edu.nju.hostelworld.vo.HostelVo;
+import edu.nju.hostelworld.vo.RoomVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -23,6 +27,9 @@ public class HostelController {
 
     @Autowired
     private HostelService hostelService;
+
+    @Autowired
+    private RoomService roomService;
 
     @RequestMapping("/modifyInfo")
     public String modifyInfo(@RequestParam("hostelName")String hostelName,
@@ -58,4 +65,29 @@ public class HostelController {
         model.addAttribute("hostel",hostel);
         return "hostelDetail";
     }
+
+    @RequestMapping("/roomList/{hostelId}")
+    @ResponseBody
+    public List<RoomVo> getRoomList(@PathVariable int hostelId){
+        return roomService.getRoom(hostelId);
+    }
+
+    @RequestMapping("/releasePlan/{hostelId}")
+    public String releasePlan(@PathVariable int hostelId,@RequestParam("startDate") String startDate,
+                                    @RequestParam("endDate") String endDate, @RequestParam("type") String type,
+                                    @RequestParam("num") int num,@RequestParam("address") String address,
+                                    @RequestParam("price") double price){
+        int realType = 0;
+        if(type.equals("单人间")){realType = 0;}
+        if(type.equals("大床房")){realType = 1;}
+        if(type.equals("标准间")){realType = 2;}
+        Timestamp start = DateTrans.string2time(startDate);
+        Timestamp end = DateTrans.string2time(endDate);
+        roomService.releaseRoomPlan(hostelId,realType,price,address,num,start,end);
+
+        return "hostelReleasePlan";
+    }
+
+
+
 }

@@ -1,3 +1,7 @@
+
+/*
+
+*/
 <%@ page import="edu.nju.hostelworld.model.Hostel" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -45,7 +49,7 @@
     <div class="col-sm-3 col-md-2 sidebar my-sidebar float-left">
         <ul class="nav nav-sidebar">
             <li><a href="#">客栈信息</a></li>
-            <li><a href="#">发布计划</a></li>
+            <li><a href="/jsp/hostelReleasePlan.jsp">发布计划</a></li>
             <li><a href="#">入店登记</a></li>
             <li><a href="#">离店登记</a></li>
             <li><a href="#">客栈统计</a></li>

@@ -53,6 +53,7 @@ public class UserController {
 //            HostelVo vo = new HostelVo(hostel);
             if(hostel != null){
                 session.setAttribute("hostelSeq",username);
+                session.setAttribute("hostelId",hostel.getId());
                 session.setAttribute("password",password);
                 session.removeAttribute("nameOrpwd_wrong");
                 model.addAttribute("hostel",hostel);
@@ -120,12 +121,13 @@ public class UserController {
             Hostel hostel = new Hostel(username,password,hostelSeq,bankAccount);
             hostelService.saveHostel(hostel);
 
-            session.setAttribute("hostelSeq",hostelSeq);
-            session.setAttribute("password",password);
-
             Hostel now_hostel = hostelService.findHostel(hostelSeq);
 //            HostelVo vo = new HostelVo(now_hostel);
             model.addAttribute("hostel",now_hostel);
+
+            session.setAttribute("hostelSeq",hostelSeq);
+            session.setAttribute("password",password);
+            session.setAttribute("hostelId",now_hostel.getId());
 
             return "hostelHome";
         }
