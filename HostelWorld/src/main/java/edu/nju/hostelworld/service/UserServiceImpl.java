@@ -92,11 +92,10 @@ public class UserServiceImpl implements UserService {
     }
 
     public UserVo pay(User user, double money) {
-        double pay = discountStrategy.getDiscountPrice(user.getLevel(),money);
-        if(user.getBalance()<pay){
+        if(user.getBalance()<money){
             return null;
         }
-        user.setBalance(user.getBalance()-pay);
+        user.setBalance(user.getBalance()-money);
         return new UserVo(userDao.save(user));
     }
 
@@ -104,6 +103,10 @@ public class UserServiceImpl implements UserService {
         user.setBalance(user.getBalance()+money);
         user.setLevel(calcLevel(user));
         return userDao.save(user);
+    }
+
+    public UserVo findUserById(int userId) {
+        return new UserVo(userDao.findById(userId));
     }
 
     public UserVo saveUser(String username, String password, String cardId, String bankAccount) {

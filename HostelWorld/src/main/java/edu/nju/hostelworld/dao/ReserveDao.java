@@ -20,6 +20,8 @@ public interface ReserveDao extends JpaRepository<Reserve,Serializable> {
 
     List<Reserve> findByUser_Id(int userId);
 
+    List<Reserve> findByUser_IdAndStatus(int userId,int status);
+
     List<Reserve> findByStartDate(Timestamp liveDate);
 
     List<Reserve> findByEndDate(Timestamp leaveDate);

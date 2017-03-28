@@ -10,17 +10,17 @@
 
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../img/icon.png">
+    <link rel="icon" href="/img/icon.png">
 
     <title>plan</title>
 
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" >
 
-    <link rel="stylesheet" href="../plugin/datePicker/css/bootstrap-combined.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="../plugin/datePicker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="/plugin/datePicker/css/bootstrap-combined.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/plugin/datePicker/css/bootstrap-datetimepicker.min.css">
 
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <link rel="stylesheet" type="text/css" href="../css/hostelReleasePlan.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/hostelReleasePlan.css">
 
 
 <body>
@@ -175,9 +175,9 @@
     </div>
 </div>
 
-<script src="../plugin/jquery/jquery-3.1.1.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../plugin/datePicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="/plugin/jquery/jquery-3.1.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/plugin/datePicker/js/bootstrap-datetimepicker.min.js"></script>
 <script type="text/javascript">
     $('.my-date-picker').datetimepicker({
         format: 'yyyy-MM-dd hh:mm:ss',
@@ -191,7 +191,7 @@
     })
 </script>
 
-<script src="../js/hostelReleasePlan.js"></script>
+<script src="/js/hostelReleasePlan.js"></script>
 
 <script type="text/javascript">
     var id = ${hostelId};

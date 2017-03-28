@@ -18,7 +18,7 @@ public class RecordVo {
 
     public RecordVo(Record record){
         BeanUtils.copyProperties(record,this,"user");
-        user = new UserVo(record.getUser());
+//        user = new UserVo(record.getUser());
     }
 
     public int getId() {

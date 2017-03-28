@@ -63,15 +63,44 @@ public interface UserService {
 
     List<UserVo> findAllUser();
 
+    /**
+     * 新增账户记录
+     * @param message 理由
+     * @param money 金额
+     * @param user 用户
+     * @return
+     */
     RecordVo saveRecord(String message, double money, User user);
 
+    /**
+     * 获取用户账户记录列表
+     * @param userId 用户id
+     * @return
+     */
     List<RecordVo> getRecordList(int userId);
 
+    /**
+     * 用户支付
+     * @param user
+     * @param money
+     * @return
+     */
     UserVo pay(User user,double money);
 
+    /**
+     * 用户余额变化
+     * @param user
+     * @param money
+     * @return
+     */
     User addBalance(User user,double money);
 
-
+    /**
+     * 通过id查找用户
+     * @param userId
+     * @return
+     */
+    UserVo findUserById(int userId);
 
 
 

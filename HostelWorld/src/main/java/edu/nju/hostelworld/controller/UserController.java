@@ -3,17 +3,25 @@ package edu.nju.hostelworld.controller;
 import edu.nju.hostelworld.model.Hostel;
 import edu.nju.hostelworld.model.User;
 import edu.nju.hostelworld.service.HostelService;
+import edu.nju.hostelworld.service.RoomService;
 import edu.nju.hostelworld.service.UserService;
+import edu.nju.hostelworld.strategy.DiscountStrategy;
+import edu.nju.hostelworld.util.DateTrans;
 import edu.nju.hostelworld.vo.HostelVo;
+import edu.nju.hostelworld.vo.ReserveVo;
+import edu.nju.hostelworld.vo.RoomVo;
+import edu.nju.hostelworld.vo.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -29,6 +37,12 @@ public class UserController {
     @Autowired
     private HostelService hostelService;
 
+    @Autowired
+    private RoomService roomService;
+
+    @Autowired
+    private DiscountStrategy discountStrategy;
+
     @RequestMapping("/login")
     public String login(@RequestParam("username")String username,
                         @RequestParam("password")String password,
@@ -40,6 +54,7 @@ public class UserController {
             if(user != null) {
                 session.setAttribute("username",username);
                 session.setAttribute("password",password);
+                session.setAttribute("userId",user.getId());
                 session.removeAttribute("nameOrpwd_wrong");
                 return "home";
             }else{
@@ -103,10 +118,11 @@ public class UserController {
             String cardId = icardId+"";
 
             User user = new User(username,password,cardId,bankAccount);
-            userService.saveUser(user);
+            user = userService.saveUser(user);
 
             session.setAttribute("username",username);
             session.setAttribute("password",password);
+            session.setAttribute("userId",user.getId());
             session.removeAttribute("name_repeat");
             return "home";
         }
@@ -239,6 +255,50 @@ public class UserController {
     }
 
 
+    @RequestMapping("/reserve/{userId}")
+    public String reserve(@PathVariable int userId, @RequestParam("startDate")String start,
+                             @RequestParam("endDate") String end, @RequestParam("num")int num, @RequestParam("roomId")int roomId){
+        Timestamp startDate = DateTrans.string2time(start);
+        Timestamp endDate = DateTrans.string2time(end);
+        double pay = getPay(userId,roomId,num,start,end);
+        roomService.reserve(userId,roomId,startDate,endDate,num,pay);
+        RoomVo room = roomService.getOneRoom(roomId);
+        System.out.println("hostel id is "+room);
+        return "redirect:/hostel/detail/"+room.getHostel().getId();
+    }
+
+    @RequestMapping("/pay/{userId}")
+    @ResponseBody
+    public double getPay(@PathVariable int userId,@RequestParam("roomId")int roomId,@RequestParam("roomNum")int roomNum,
+                         @RequestParam("startDate")String start,@RequestParam("endDate")String end){
+        UserVo user = userService.findUserById(userId);
+        RoomVo room = roomService.getOneRoom(roomId);
+        Timestamp startDate = DateTrans.string2time(start);
+        Timestamp endDate = DateTrans.string2time(end);
+        double days = (endDate.getTime()-startDate.getTime())/(1000*3600*24.0);
+        if(days > (int)days){
+            days = (int)days+1;
+        }else{
+            days = (int)days;
+        }
+        double payMoney = discountStrategy.getDiscountPrice(user.getLevel(),roomNum*days*room.getPrice());
+        System.out.println("days is "+days);
+        System.out.println("has to pay:"+payMoney);
+        return payMoney;
+    }
+
+    @RequestMapping("/getReserve/{userId}")
+    @ResponseBody
+    public List<ReserveVo> getReserve(@PathVariable int userId){
+        return roomService.getUserReserveList(userId,0);
+    }
+
+    @RequestMapping("/cancelReserve/{reserveId}")
+    @ResponseBody
+    public List<ReserveVo> cancelReserve(@PathVariable int reserveId,@RequestParam("userId")int userId){
+        roomService.cancelReserve(reserveId);
+        return getReserve(userId);
+    }
 
 
 

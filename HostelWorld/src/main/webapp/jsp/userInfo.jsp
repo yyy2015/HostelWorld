@@ -32,7 +32,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#">首页</a></li>
+                <li><a href="/jsp/home.jsp">首页</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="float-right"><a href="#">${sessionScope.username}</a></li>
@@ -48,8 +48,8 @@
     <!--侧边栏-->
     <div class="col-sm-3 col-md-2 sidebar my-sidebar float-left">
         <ul class="nav nav-sidebar">
-            <li><a href="#">基本信息</a></li>
-            <li><a href="#">我的预约</a></li>
+            <li><a href="/user/userInfo">基本信息</a></li>
+            <li><a href="/jsp/userReserve.jsp">我的预约</a></li>
         </ul>
     </div>
 

@@ -1,0 +1,7 @@
+.reserve,.reserve:focus{
+    position:relative;
+    width:90px;
+    height:30px;
+    background-image: none;
+    right:15px;
+}

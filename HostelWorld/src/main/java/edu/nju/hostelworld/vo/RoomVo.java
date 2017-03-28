@@ -43,12 +43,12 @@ public class RoomVo {
                 lives.add(new LiveVo(live));
             }
         }
-        if(room.getReserves() != null) {
-            reserves = new ArrayList<ReserveVo>();
-            for (Reserve reserve : room.getReserves()) {
-                reserves.add(new ReserveVo(reserve));
-            }
-        }
+//        if(room.getReserves() != null) {
+//            reserves = new ArrayList<ReserveVo>();
+//            for (Reserve reserve : room.getReserves()) {
+//                reserves.add(new ReserveVo(reserve));
+//            }
+//        }
     }
 
     public int getId() {
@@ -107,13 +107,13 @@ public class RoomVo {
         this.reserves = reserves;
     }
 
-//    public HostelVo getHostel() {
-//        return hostel;
-//    }
-//
-//    public void setHostel(HostelVo hostel) {
-//        this.hostel = hostel;
-//    }
+    public HostelVo getHostel() {
+        return hostel;
+    }
+
+    public void setHostel(HostelVo hostel) {
+        this.hostel = hostel;
+    }
 
     public String getStartDate() {
         return startDate;

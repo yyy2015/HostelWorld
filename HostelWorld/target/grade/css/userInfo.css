@@ -84,3 +84,24 @@ li .value{
     left:100px;
 }
 
+.reserve-title{
+    height:60px;
+    font-size:17px;
+    font-weight: bold;
+    margin-bottom:10px;
+    color:rgb(100,100,100);
+}
+
+.reserve-item{
+    margin-top:10px;
+    height:40px;
+}
+
+.reserve-cancel,.reserve-cancel:focus{
+    position:relative;
+    width:90px;
+    height:30px;
+    background-image: none;
+    right:15px;
+}
+

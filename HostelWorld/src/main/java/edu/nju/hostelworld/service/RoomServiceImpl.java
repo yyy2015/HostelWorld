@@ -2,10 +2,7 @@ package edu.nju.hostelworld.service;
 
 import edu.nju.hostelworld.dao.*;
 import edu.nju.hostelworld.model.*;
-import edu.nju.hostelworld.vo.BillVo;
-import edu.nju.hostelworld.vo.LiveVo;
-import edu.nju.hostelworld.vo.ReserveVo;
-import edu.nju.hostelworld.vo.RoomVo;
+import edu.nju.hostelworld.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -77,13 +74,21 @@ public class RoomServiceImpl implements RoomService{
         return list;
     }
 
+    public RoomVo getOneRoom(int roomId) {
+        Room room = roomDao.findById(roomId);
+        RoomVo vo = new RoomVo(room);
+        HostelVo hvo = new HostelVo(room.getHostel());
+        vo.setHostel(hvo);
+        return vo;
+    }
+
     @Transactional
     public ReserveVo reserve(int userId, int roomId, Timestamp start, Timestamp end,
                              int roomNum, double payMoney) {
         Room room = roomDao.findById(roomId);
         User user = userDao.findById(userId);
         //扣除user的账户余额
-        userService.pay(user,room.getPrice()*roomNum);
+        userService.pay(user,payMoney);
         //更新待结算列表
         Hostel hostel = room.getHostel();
         generateBill(hostel,payMoney);
@@ -183,7 +188,9 @@ public class RoomServiceImpl implements RoomService{
         for(Room room:roomList){
             List<Reserve> tempList = reserveDao.findByRoom_IdAndStatus(room.getId(),status);
             for(Reserve reserve:tempList){
-                reserveList.add(new ReserveVo(reserve));
+                ReserveVo vo = new ReserveVo(reserve);
+                vo.setHostelName(hostel.getHostelName());
+                reserveList.add(vo);
             }
         }
         return reserveList;
@@ -201,6 +208,19 @@ public class RoomServiceImpl implements RoomService{
             }
         }
         return liveList;
+    }
+
+    public List<ReserveVo> getUserReserveList(int userId, int status) {
+        List<Reserve> reserves = reserveDao.findByUser_IdAndStatus(userId,status);
+        List<ReserveVo> list = new ArrayList<ReserveVo>();
+        for(Reserve reserve:reserves){
+            ReserveVo vo = new ReserveVo(reserve);
+            Room room = reserve.getRoom();
+            Hostel hostel = room.getHostel();
+            vo.setHostelName(hostel.getHostelName());
+            list.add(vo);
+        }
+        return list;
     }
 
 }

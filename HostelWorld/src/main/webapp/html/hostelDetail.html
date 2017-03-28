@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>HostelDetail</title>
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../img/icon.png">
+
+    <title>plan</title>
 
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" >
+
+    <link rel="stylesheet" href="../plugin/datePicker/css/bootstrap-combined.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../plugin/datePicker/css/bootstrap-datetimepicker.min.css">
+
     <link rel="stylesheet" type="text/css" href="../css/main.css">
-</head>
+    <link rel="stylesheet" type="text/css" href="../css/hostelReleasePlan.css">
+    <link rel="stylesheet" type="text/css" href="../css/hostelDetail.css">
+
+
 <body>
 <!--导航栏-->
 <nav class="navbar navbar-inverse navbar-fixed-top my-nav">
@@ -32,9 +42,121 @@
     </div>
 </nav>
 
-<div class="container">
+
+
+<div class="container main-part">
+    <h3>客栈名称</h3>
+    <hr>
+    <div class="col-sm-12">
+        <div class="plan-title">
+            <div class="col-sm-1">编号</div>
+            <div class="col-sm-2">开始日期</div>
+            <div class="col-sm-2">结束日期</div>
+            <div class="col-sm-1">类型</div>
+            <div class="col-sm-1">剩余</div>
+            <div class="col-sm-2">地址</div>
+            <div class="col-sm-2">价格</div>
+            <div class="col-sm-1">预订</div>
+        </div>
+        <div class="plan-body" id="plan-body-list">
+            <div class="plan-body-item">
+                <div class="col-sm-1 no">1</div>
+                <div class="col-sm-2 start">2017.10.20</div>
+                <div class="col-sm-2 end">2017.11.20</div>
+                <div class="col-sm-1 type">单人房</div>
+                <div class="col-sm-1 num">10</div>
+                <div class="col-sm-2 address">鼓楼，南京</div>
+                <div class="col-sm-2 "><span class="price">100</span>/每晚</div>
+                <div class="col-sm-1">
+                    <button class="btn btn-default my-btn reserve" data-toggle="modal" data-target="#reserve-room" >
+                        预订</button>
+                </div>
+            </div>
+            <div class="plan-body-item">
+                <div class="col-sm-1 no">1</div>
+                <div class="col-sm-2 start">2017.10.20</div>
+                <div class="col-sm-2 end">2017.11.20</div>
+                <div class="col-sm-1 type">单人房</div>
+                <div class="col-sm-1 num">10</div>
+                <div class="col-sm-2 address">鼓楼，南京</div>
+                <div class="col-sm-2 "><span class="price">100</span>/每晚</div>
+                <div class="col-sm-1"><a class="btn btn-default my-btn reserve">预订</a></div>
+            </div>
+            <div class="plan-body-item">
+                <div class="col-sm-1 no">1</div>
+                <div class="col-sm-2 start">2017.10.20</div>
+                <div class="col-sm-2 end">2017.11.20</div>
+                <div class="col-sm-1 type">单人房</div>
+                <div class="col-sm-1 num">10</div>
+                <div class="col-sm-2 address">鼓楼，南京</div>
+                <div class="col-sm-2 "><span class="price">100</span>/每晚</div>
+                <div class="col-sm-1"><a class="btn btn-default my-btn reserve">预订</a></div>
+            </div>
+        </div>
+    </div>
+
 
 </div>
+
+<!--预订客房模态框-->
+<div class="modal fade" id="reserve-room" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title grey-color" >预订房间</h4>
+            </div>
+            <form action="#" method="post">
+                <div class="modal-body">
+                    <div>
+                        <span class="modal-param">入住日期：</span>
+                        <div class="input-append date my-date-picker">
+                            <input type="text" name="startDate" />
+                            <span class="add-on">
+                                <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                            </span>
+                        </div>
+                    </div><br>
+                    <div >
+                        <span class="modal-param">退房日期：</span>
+                        <div class="input-append date my-date-picker">
+                            <input type="text" name="endDate" />
+                            <span class="add-on">
+                                <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                            </span>
+                        </div>
+                    </div><br>
+                    <div >
+                        <span class="modal-param">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp数量：</span>
+                        <input type="text"  name="num">
+                    </div><br>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal">取消</button>
+                    <button type="submit" class="btn btn-primary btn-confirm" data-dismiss="modal">预订并支付</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../plugin/jquery/jquery-3.1.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../plugin/datePicker/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript">
+    $('.my-date-picker').datetimepicker({
+        format: 'yyyy-MM-dd hh:mm:ss',
+        language: 'en',
+        pickDate: true,
+        pickTime: true,
+        hourStep: 1,
+        minuteStep: 15,
+        secondStep: 30,
+        inputMask: true
+    })
+</script>
+
 
 </body>
 </html>

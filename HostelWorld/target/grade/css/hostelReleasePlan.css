@@ -16,7 +16,7 @@
 
 .plan-body-item{
     margin-top:10px;
-    height:30px;
+    height:40px;
 }
 
 .addPlan,.addPlan:focus{
@@ -31,7 +31,7 @@
     display: inline;
 }
 
-#release-plan{
+#release-plan,#reserve-room{
     background: transparent;
     width:700px;
 }

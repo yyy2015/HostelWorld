@@ -21,9 +21,11 @@ public class ReserveVo {
     private RoomVo room;
     private double payMoney;
 
+    private String hostelName;
+
     public ReserveVo(Reserve reserve){
         BeanUtils.copyProperties(reserve,this,"user","room");
-        user = new UserVo(reserve.getUser());
+//        user = new UserVo(reserve.getUser());
         room = new RoomVo(reserve.getRoom());
     }
 
@@ -89,5 +91,13 @@ public class ReserveVo {
 
     public void setPayMoney(double payMoney) {
         this.payMoney = payMoney;
+    }
+
+    public String getHostelName() {
+        return hostelName;
+    }
+
+    public void setHostelName(String hostelName) {
+        this.hostelName = hostelName;
     }
 }

@@ -35,6 +35,8 @@ public interface RoomService {
      */
     List<RoomVo> getRoom(int hostelId);
 
+    RoomVo getOneRoom(int roomId);
+
     /**
      * 会员预订
      * @param userId 用户id
@@ -93,5 +95,13 @@ public interface RoomService {
      * @return {@link List<Live>}
      */
     List<LiveVo> getLiveList(int hostelId,int status);
+
+    /**
+     * 获取用户预订列表
+     * @param userId 用户id
+     * @param status 预订状态，0：已预订，1：已完成，-1：已取消
+     * @return
+     */
+    List<ReserveVo> getUserReserveList(int userId,int status);
 
 }
