@@ -28,7 +28,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#">首页</a></li>
+                <%--<li><a href="#">首页</a></li>--%>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="float-right"><a href="#">${sessionScope.username}</a></li>

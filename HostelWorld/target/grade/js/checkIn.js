@@ -47,7 +47,7 @@ var CheckReserveList = {
             var confirmCheck = tempGrid.find(".button-check-confirm").eq(0);
 
             confirmCheck.click(function(){
-                var livers;
+                var livers = "";
                 tempGrid.find(".liver").each(function(){
                     livers = livers + $(this).val()+"~";
                 })
@@ -65,6 +65,7 @@ var CheckReserveList = {
                     },
                     success:function(newList){
                         CheckReserveList.updateData(newList);
+                        window.location.replace(window.location.href);
                     },
                     error:function(){
                         console.log("check in wrong!");

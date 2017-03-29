@@ -13,7 +13,10 @@
         </div>
         <div class="login-content">
             <div class="form">
-                <div class="hint"><% if(session.getAttribute("nameOrpwd_wrong")!=null) out.print("用户名或密码错误"); %></div>
+                <div class="hint">
+                    <% if(session.getAttribute("stopped") != null) out.print("用户已永久停用"); %>
+                    <% if(session.getAttribute("nameOrpwd_wrong")!=null) out.print("用户名或密码错误"); %>
+                </div>
                 <form action="/user/login" method="post">
                     <div class="form-group">
                         <div class="input-group">

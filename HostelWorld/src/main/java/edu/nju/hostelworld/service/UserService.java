@@ -24,6 +24,8 @@ public interface UserService {
 
     boolean isCardExist(String cardId);
 
+    UserVo stopUser(String username);
+
 
 /***********************************我是洗心革面的分割线*************************************************/
     /**
@@ -101,6 +103,9 @@ public interface UserService {
      * @return
      */
     UserVo findUserById(int userId);
+
+
+    void checkUserState();
 
 
 

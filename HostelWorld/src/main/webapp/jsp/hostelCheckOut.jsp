@@ -37,7 +37,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#">首页</a></li>
+                <%--<li><a href="#">首页</a></li>--%>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="float-right"><a href="#">${hostelSeq}</a></li>
@@ -54,10 +54,9 @@
     <div class="col-sm-3 col-md-2 sidebar my-sidebar float-left">
         <ul class="nav nav-sidebar">
             <li><a href="/hostel/info/${hostelId}">客栈信息</a></li>
-            <li><a href="#">发布计划</a></li>
-            <li><a href="#">入店登记</a></li>
-            <li><a href="#">离店登记</a></li>
-            <li><a href="#">客栈统计</a></li>
+            <li><a href="/jsp/hostelReleasePlan.jsp">发布计划</a></li>
+            <li><a href="/jsp/hostelCheckIn.jsp">入店登记</a></li>
+            <li><a href="/jsp/hostelCheckOut.jsp">离店登记</a></li>
         </ul>
     </div>
 

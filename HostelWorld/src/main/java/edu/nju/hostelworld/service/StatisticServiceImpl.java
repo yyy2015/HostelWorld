@@ -108,7 +108,7 @@ public class StatisticServiceImpl implements StatisticService {
 
         ReserveStatVo ingVo = new ReserveStatVo("ing",ingList);
         ReserveStatVo cancelVo = new ReserveStatVo("cancel",cancelList);
-        ReserveStatVo finishVo = new ReserveStatVo("ing",finishList);
+        ReserveStatVo finishVo = new ReserveStatVo("finish",finishList);
         list.add(ingVo);
         list.add(cancelVo);
         list.add(finishVo);

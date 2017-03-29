@@ -48,10 +48,16 @@ public class UserController {
         //会员登录
         if(identity.equals("member")){
             User user = userService.findUser(username,password);
+
             if(user != null) {
+                if(user.getStatus()==-2){
+                    session.setAttribute("stopped",true);
+                    return "login";
+                }
                 session.setAttribute("username",username);
                 session.setAttribute("password",password);
                 session.setAttribute("userId",user.getId());
+                session.removeAttribute("stopped");
                 session.removeAttribute("nameOrpwd_wrong");
                 return "home";
             }else{
@@ -117,11 +123,11 @@ public class UserController {
             User user = new User(username,password,cardId,bankAccount);
             user = userService.saveUser(user);
 
-            session.setAttribute("username",username);
-            session.setAttribute("password",password);
-            session.setAttribute("userId",user.getId());
+//            session.setAttribute("username",username);
+//            session.setAttribute("password",password);
+//            session.setAttribute("userId",user.getId());
             session.removeAttribute("name_repeat");
-            return "home";
+            return "login";
         }
 
         if(identity.equals("hostel")){
@@ -244,7 +250,7 @@ public class UserController {
     @RequestMapping("/stopMember")
     public String stopMember(HttpSession session){
         String username = (String)session.getAttribute("username");
-        userService.deleteUser(username);
+        userService.stopUser(username);
         session.invalidate();
         session = null;
 
@@ -254,7 +260,14 @@ public class UserController {
 
     @RequestMapping("/reserve/{userId}")
     public String reserve(@PathVariable int userId, @RequestParam("startDate")String start,
-                             @RequestParam("endDate") String end, @RequestParam("num")int num, @RequestParam("roomId")int roomId){
+                          @RequestParam("endDate") String end, @RequestParam("num")int num,
+                          @RequestParam("roomId")int roomId,Model model){
+
+        UserVo user = userService.findUserById(userId);
+        if(user.getStatus()<=0){//用户未激活
+            return "redirect:/user/userInfo";
+        }
+
         Timestamp startDate = DateTrans.string2time(start);
         Timestamp endDate = DateTrans.string2time(end);
         double pay = getPay(userId,roomId,num,start,end);
@@ -308,6 +321,7 @@ public class UserController {
     public List<RecordVo> getUserRecord(@PathVariable int userId){
         return userService.getRecordList(userId);
     }
+
 
 
     /**

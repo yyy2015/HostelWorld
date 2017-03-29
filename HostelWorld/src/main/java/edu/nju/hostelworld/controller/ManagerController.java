@@ -2,6 +2,7 @@ package edu.nju.hostelworld.controller;
 
 import edu.nju.hostelworld.model.Bill;
 import edu.nju.hostelworld.model.Hostel;
+import edu.nju.hostelworld.service.HostelService;
 import edu.nju.hostelworld.service.ManagerService;
 import edu.nju.hostelworld.vo.BillVo;
 import edu.nju.hostelworld.vo.HostelVo;
@@ -21,6 +22,9 @@ import java.util.List;
 public class ManagerController {
     @Autowired
     private ManagerService managerService;
+
+    @Autowired
+    private HostelService hostelService;
 
     /**
      * 获取未审批客栈列表
@@ -58,6 +62,13 @@ public class ManagerController {
     public List<BillVo> settleAccount(@PathVariable int hostelId){
         managerService.settleAccount(hostelId);
         return getBills();
+    }
+
+    @RequestMapping("/hostelAccount")
+    @ResponseBody
+    public double getHostelAccount(){
+        Hostel manager = hostelService.findHostelById(1);
+        return manager.getBalance();
     }
 
 

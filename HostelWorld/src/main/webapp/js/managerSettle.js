@@ -24,6 +24,7 @@ var BillList = {
                     url:"/hostelManage/settle/"+bill.hostel.id,
                     success:function(newList){
                         BillList.updateData(newList);
+                        window.location.replace(window.location.href);
                     },
                     error:function(){
                         console.log("settle wrong!");
@@ -43,6 +44,12 @@ $(document).ready(
             url:"/hostelManage/bill",
             success:function(newList){
                 BillList.updateData(newList);
+                $.get({
+                    url:"/hostelManage/hostelAccount",
+                    success:function(value){
+                        $("#hostelAccount").text(value);
+                    }
+                })
             },
             error:function(){
                 console.log("get bill list wrong!");

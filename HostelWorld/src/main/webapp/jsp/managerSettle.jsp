@@ -35,7 +35,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#">首页</a></li>
+                <%--<li><a href="#">首页</a></li>--%>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="float-right"><a href="#">${sessionScope.username}</a></li>
@@ -51,9 +51,9 @@
     <!--侧边栏-->
     <div class="col-sm-3 col-md-2 sidebar my-sidebar float-left">
         <ul class="nav nav-sidebar">
-            <li><a href="#">待审批</a></li>
+            <li><a href="/jsp/managerHome.jsp">待审批</a></li>
             <li><a href="#">支付结算</a></li>
-            <li><a href="#">信息统计</a></li>
+            <li><a href="/jsp/managerStatistic.jsp">信息统计</a></li>
         </ul>
     </div>
 
@@ -84,6 +84,14 @@
 
                 </div>
 
+            </div>
+
+            <div class="clearfix"></div>
+            <h3>HostelWorld</h3>
+            <hr>
+            <div>
+                <span class="settle-title" style="position:relative;left:20px;">账户余额：&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                <span id="hostelAccount">1000</span>
             </div>
 
         </div>

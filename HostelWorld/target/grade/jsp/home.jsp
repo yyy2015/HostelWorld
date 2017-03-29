@@ -31,7 +31,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="home.jsp">首页</a></li>
+                <li><a href="/jsp/home.jsp">首页</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="float-right"><a href="/user/userInfo">${sessionScope.username}</a></li>

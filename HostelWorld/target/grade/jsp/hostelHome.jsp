@@ -32,7 +32,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#">首页</a></li>
+                <%--<li><a href="#">首页</a></li>--%>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="float-right"><a href="#">${hostelSeq}</a></li>
@@ -52,7 +52,6 @@
             <li><a href="/jsp/hostelReleasePlan.jsp">发布计划</a></li>
             <li><a href="/jsp/hostelCheckIn.jsp">入店登记</a></li>
             <li><a href="/jsp/hostelCheckOut.jsp">离店登记</a></li>
-            <li><a href="#">客栈统计</a></li>
         </ul>
     </div>
 
@@ -69,7 +68,7 @@
                             case 1: out.print("<span class='value my-green'>申请已通过</span>");break;
                             case -1: out.print("<span class='value my-red'>申请已拒绝</span>");break;
                         }%></li>
-                    <li> <span class="tag">账户余额:&nbsp&nbsp&nbsp</span><span class="value">${hostel.balance}</span></li>
+                    <li> <span class="tag">账户余额:&nbsp&nbsp&nbsp</span><span class="value"><%=String.format("%.2f",((Hostel)request.getAttribute("hostel")).getBalance())%></span></li>
                     <li> <span class="tag">客栈主人:&nbsp&nbsp&nbsp</span><span class="value">${hostel.host}</span></li>
                     <li> <span class="tag">客栈序列号:&nbsp&nbsp&nbsp</span><span class="value">${hostel.hostelSeq}</span> </li>
                     <li> <span class="tag">银行账户:&nbsp&nbsp&nbsp</span><span class="value">${hostel.bankAccount}</span></li>

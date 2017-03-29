@@ -8,9 +8,14 @@ import edu.nju.hostelworld.strategy.DiscountStrategy;
 import edu.nju.hostelworld.vo.RecordVo;
 import edu.nju.hostelworld.vo.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,6 +72,13 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    public UserVo stopUser(String username) {
+        User user = userDao.findByUsername(username);
+        user.setStatus(-2);
+        return new UserVo(userDao.save(user));
+    }
+
+
     /************************************我是洗心革面的分割线*******************************************************/
 
     public List<UserVo> findAllUser() {
@@ -108,6 +120,34 @@ public class UserServiceImpl implements UserService {
     public UserVo findUserById(int userId) {
         return new UserVo(userDao.findById(userId));
     }
+
+
+    @Scheduled(cron = "0 0 5 * * ?")
+    public void checkUserState() {
+        Date oneYearBefore = new Date(System.currentTimeMillis());
+        oneYearBefore.setYear(oneYearBefore.getYear()-1);
+        Date twoYearBefore = new Date(System.currentTimeMillis());
+        twoYearBefore.setYear(twoYearBefore.getYear()-2);
+        List<User> userList = userDao.findAll();
+        for(User user:userList){
+            String lastAvail = user.getLastAvail();
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date date = new Date();
+            try {
+                date = df.parse(lastAvail);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            if(date.before(oneYearBefore) && user.getBalance()<1000){
+                user.setStatus(0);
+                userDao.save(user);
+            }
+            if(date.before(twoYearBefore) && user.getBalance()<1000){
+                stopUser(user.getUsername());
+            }
+        }
+    }
+
 
     public UserVo saveUser(String username, String password, String cardId, String bankAccount) {
         return null;
