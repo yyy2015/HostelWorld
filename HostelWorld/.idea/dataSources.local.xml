@@ -9,7 +9,9 @@
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
+      <introspection-schemas>*:studentgrade</introspection-schemas>
       <resolve-scope>studentgrade:</resolve-scope>
+      <unqualified-resolve-schemas>studentgrade:</unqualified-resolve-schemas>
     </data-source>
     <data-source name="MySQL - hostel_world@localhost" uuid="858a30aa-ee5d-48e8-803b-61cdeb498ed5">
       <database-info product="MySQL" version="5.7.16-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
@@ -19,7 +21,9 @@
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
+      <introspection-schemas>*:hostel_world</introspection-schemas>
       <resolve-scope>hostel_world:</resolve-scope>
+      <unqualified-resolve-schemas>hostel_world:</unqualified-resolve-schemas>
     </data-source>
   </component>
 </project>
